@@ -1,0 +1,12 @@
+{
+	"name": "daviduffy/daviduffy",
+	"description": "a profile site for david duffy",
+	"type": "project",
+	"authors": [{
+		"name": "David Duffy",
+		"email": "daviduffy1@gmail.com"
+	}],
+	"require": {
+		"php": "~7.1.0"
+	}
+}
