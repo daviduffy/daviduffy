@@ -1,0 +1,22 @@
+// Single page app navigation
+// ==========================
+
+main > * {
+    display: none;    
+    
+    // shows any element that is targeted
+    &:target {
+        display: block;
+        animation: fade 0.5s ease 1;
+    }
+    
+    // shows the default view when the user hits www.site.com
+    &:last-child {
+        display: block;
+    }
+    
+    // this monstrosity hides the default view when a target exists
+    &:target ~ * {
+        display: none;
+    }
+}

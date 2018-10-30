@@ -1,0 +1,48 @@
+.recognition
+
+.recognition--link
+  img
+    display: block
+    margin: auto
+    @include fluid-spacing(--recognition-img, 37.5rem, 80rem, 6rem, 9rem)
+
+    max-height: var( --recognition-img )
+    max-width: var( --recognition-img )
+
+    @media screen and ( $min-width-medium )
+      transform: scale(1.4)
+
+    @media screen and ( $min-width-large )
+      transform: scale(2)
+
+// Non-Grid Styles
+// ================================================================
+@if $show-not-grid-styles
+  // @supports not (display: grid) 
+  .recognition--link
+    display: flex
+    justify-content: stretch
+    align-items: stretch
+    flex: 1
+
+  .recognition--poster
+    color: var( --color-primary )
+
+  .recognition--company
+
+
+
+
+// Grid Styles
+// ================================================================
+@if $show-grid-styles
+  // @supports (display: grid)
+  .recognition--link
+    align-self: center
+    max-height: initial
+    // transform: scale(1.2)
+    // @media screen and ( $min-width-smedium )
+    //   transform: scale(1.5)
+    // @media screen and ( $min-width-medium )
+    //   transform: scale(2)
+    

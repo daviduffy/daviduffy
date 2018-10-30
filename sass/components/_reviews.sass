@@ -1,0 +1,76 @@
+.star
+  display: inline-block
+  width: 1.2rem
+  height: 1.2rem
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjE5cHgiIGhlaWdodD0iMTlweCIgdmlld0JveD0iMCAwIDE5IDE5IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggc3Ryb2tlPSJub25lIiBmaWxsPSIjRkFDMTJGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNy44LDcuNEwxMi41LDYuNkMxMi4zLDYuNSAxMi4xLDYuNCAxMiw2LjJMOS43LDEuMUM5LjYsMSA5LjQsMSA5LjMsMS4xTDcsNi4yQzYuOSw2LjQgNi43LDYuNSA2LjUsNi42TDEuMiw3LjRDMSw3LjQgMC45LDcuNSAxLjEsNy43TDQuOSwxMS42QzUuMSwxMS43IDUuMSwxMiA1LjEsMTIuMkw0LjIsMTcuOEM0LjIsMTggNC4zLDE4LjEgNC40LDE4TDkuMiwxNS4zQzkuNCwxNS4yIDkuNiwxNS4yIDkuOCwxNS4zTDE0LjYsMThDMTQuNywxOC4xIDE0LjgsMTggMTQuOCwxNy44TDEzLjksMTIuMkMxMy45LDEyIDEzLjksMTEuNyAxNC4xLDExLjZMMTcuOSw3LjdDMTguMSw3LjUgMTgsNy40IDE3LjgsNy40WiIvPjwvc3ZnPg==) center / cover no-repeat
+
+.review__item
+  padding: 1rem
+
+.review__cont
+  font-family: var( --font-poster )
+  color: var( --medium-gray )
+
+.review__rating,
+.review__total
+  font-weight: 300!important
+
+.review__stars
+  margin: 0 0.5rem
+
+// Non-Grid Styles
+// ================================================================
+@if $show-not-grid-styles
+  // @supports not (display: grid) 
+  .review__item
+    display: flex
+    flex-direction: column
+    align-items: center
+    flex: 1 0 100%
+    max-width: 100%
+    @media screen and ( $min-width-smedium )
+      flex: 1 0 49.9%
+      max-width: 49.9%
+    @media screen and ( $min-width-large )
+      flex: 1 0 24.9%
+      max-width: 24.9%
+
+  .review__logo
+    background: center/contain no-repeat
+    height: 49px
+    width: 260px
+
+  .review__cont
+    max-height: 2.6rem
+    display: flex
+
+  .review__stars
+    display: flex
+    align-items: center
+
+  .review__title
+    position: absolute
+    pointer-events: none
+    opacity: 0
+
+  .recognition--poster
+    color: var( --color-primary )
+
+  .recognition--company
+
+
+
+
+// Grid Styles
+// ================================================================
+@if $show-grid-styles
+  // @supports (display: grid)
+  .recognition--link
+    align-self: center
+    max-height: initial
+    // transform: scale(1.2)
+    // @media screen and ( $min-width-smedium )
+    //   transform: scale(1.5)
+    // @media screen and ( $min-width-medium )
+    //   transform: scale(2)
+    

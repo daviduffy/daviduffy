@@ -1,0 +1,84 @@
+// Typography
+// ----------
+
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700|Open+Sans:400,600,300");
+
+
+
+// Utilities
+// ------------
+
+.row.normal {
+    max-width: $grid-row-width !important;
+}
+
+.eat-left {
+    padding-left: 0 !important;
+}
+
+.eat-right {
+    padding-right: 0 !important;
+}
+
+.eat-both {
+    @extend .eat-left;
+    @extend .eat-right;
+}
+
+@mixin abs-centered {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+@mixin display-flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin justify-content ( $arg ) {
+    -webkit-justify-content: $arg ;
+    justify-content: $arg ;
+}
+
+@mixin justify-content-center {
+    @include justify-content(center);
+}
+
+@mixin align-items($arg) {
+    -webkit-align-items: $arg;
+    align-items: $arg;
+}
+
+@mixin flex-centered {
+    @include display-flex;
+    @include justify-content(center);
+    @include align-items(center);
+}
+
+@mixin link-style {
+    color: transparentize($black, 0.25);
+    box-shadow: 0px 2px 0px 0px transparentize($color-action ,0.5);
+}
+
+@mixin flex-direction($arg) {
+    -webkit-flex-direction: $arg;
+    flex-direction: $arg;
+}
+
+@mixin flex-wrap($arg) {
+    -webkit-flex-wrap: $arg;
+    flex-wrap: $arg;
+}
+
+@mixin column-count($arg){
+    -webkit-column-count: $arg; /* Chrome, Safari, Opera */
+    -moz-column-count: $arg; /* Firefox */
+    column-count: $arg;
+}

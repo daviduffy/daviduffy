@@ -1,0 +1,324 @@
+.eng
+
+.card__slide
+  display: none
+  max-width: 1280px
+  margin: auto
+  height: var( --js-card-height )
+
+.card__h
+  text-transform: uppercase
+  color: var( --mustard-yellow )
+  font-weight: 300
+  transform: translate(1rem, 0rem)
+  @media screen and ( $min-width-smedium )
+    transform: translate(5rem, 0rem)
+  @media screen and ( $min-width-medium )
+    transform: translate(5rem, -4rem)
+
+.card__title
+  span
+    display: block
+  span:last-child
+    text-transform: uppercase
+    margin-bottom: 1rem
+
+.card__blurb
+  font-family: var( --font-serif )
+
+.card__final
+  margin-top: 0.75rem
+
+.card__img
+  display: block
+  background: var( --stormy-blue ) center/cover no-repeat
+
+
+
+// Engagements
+// ================================================================
+
+@for $i from 1 through 2
+  .card__radio--#{$i}:checked ~ .card__slide--#{$i}
+    animation: fade-in var(--long-easing-duration)
+    animation-fill-mode: forwards
+
+// Non-Grid Styles
+// ================================================================
+@if $show-not-grid-styles
+  // @supports not (display: grid)
+  .eng
+
+  @for $i from 1 through 2
+    .card__radio--#{$i}:checked ~ .card__slide--#{$i}
+      display: flex
+
+  .card__slide
+    position: relative
+    flex-direction: column
+    @media screen and ( $min-width-medium )
+      flex-direction: row
+
+  .card__slide--2
+    margin-bottom: 60px
+    .card__toggle
+      bottom: -80px
+
+  .card__cont--1
+    @media screen and ( $min-width-medium )
+      padding-right: 1rem
+    .card__txt
+      margin-right: 1rem
+    .card__img
+      margin-top: auto
+
+  .card__cont--2
+    @media screen and ( $min-width-medium )
+      padding-left: 1rem
+    .card__txt
+      order: 2
+      margin-left: 1rem
+      @media screen and ( $min-width-medium )
+        transform: translateY(-100px)
+    .card__img
+      order: 1
+      margin-bottom: auto
+    
+
+  .card__cont
+    display: flex
+    min-height: 520px
+    margin-bottom: 2rem
+    @media screen and ( $min-width-medium )
+      min-height: 700px
+      margin-top: initial
+
+  .card__h,
+  .card__toggle
+    position: absolute
+  .card__h
+    top: 0
+    left: 0
+  .card__toggle
+    bottom: calc((var(--vertical-spacer)/2))
+    right: 0
+
+  .card__txt
+    flex: 4
+    align-self: center
+  .card__img
+    min-height: 450px
+    flex: 3.8
+    @media screen and ( $min-width-medium )
+      min-height: 600px
+      flex: 5
+
+
+// Grid Styles
+// ================================================================
+@if $show-grid-styles
+  @supports (display: grid)
+    @for $i from 1 through 2
+      .card__radio--#{$i}:checked ~ .card__slide--#{$i}
+        display: grid
+
+    .card__h
+      top: 1rem
+
+    .card__cont,
+    .card__txt,
+    .card__img
+      padding: 0!important
+      margin: 0!important
+
+    .card__slide
+      grid-row: 2/5
+      grid-gap: 3rem
+      grid-template-rows: 1fr 1fr
+      grid-template-columns: 1fr
+      @media screen and ( $min-width-medium )
+        grid-template-rows: 1fr
+        grid-template-columns: 1fr 1fr
+
+    .card__cont
+      margin-top: initial
+      display: grid
+      grid-template-rows: repeat(5, 130px)
+      grid-row: 1
+      grid-column-gap: 1rem
+
+    .card__cont--1
+      grid-row: 1
+      grid-column: 1
+      grid-template-columns: 4fr 6fr
+
+      .card__img
+        margin-top: 0
+        grid-row: 2 / span 4
+        grid-column: 2
+      .card__txt
+        grid-row: 3 / span 2
+        grid-column: 1/2
+
+    .card__cont--2
+      grid-row: 2
+      grid-column: 1
+      grid-template-columns: 6fr 4fr
+      @media screen and ( $min-width-medium )
+        grid-row: 1
+        grid-column: 2
+
+      .card__img
+        margin-bottom: 0
+        grid-row: 1 / span 4
+        grid-column: 1
+      .card__txt
+        grid-row: 3 / span 2
+        grid-column: 2/3
+
+    .card__h
+      z-index: 1
+      grid-row: 1
+      grid-column: 1 / span 2
+
+    .card__toggle
+      grid-column: 2
+      grid-row: 1
+      display: grid
+      align-content: end
+      justify-content: end
+
+
+
+
+// Family and Newborn
+// ================================================================
+
+// Non-Grid Styles
+// ================================================================
+@if $show-not-grid-styles
+  // @supports not (display: grid) 
+  .card
+    display: flex
+
+  .card__img
+    flex: 5 0 55%
+  .card__txt  
+    flex: 4 0 45%
+
+  .card--newborn
+    margin-bottom: 6rem
+    align-items: center
+    .card__txt
+      order: 3
+      @media screen and ( $min-width-medium )
+        flex: 3.5 0 36%
+    .card__img
+      order: 2
+      margin-right: 2rem
+      @media screen and ( $min-width-medium )
+        flex: 3.5 0 36%
+        margin-left: 2rem
+    .card__img--2
+      order: 1
+      display: none
+      margin: 0!important
+      @media screen and ( $min-width-medium )
+        display: block
+        background-size: 300px
+        background-color: transparent
+        flex: 2.8 0 28%
+        max-height: 360px
+
+  .card--family
+    flex-direction: column
+    @media screen and ( $min-width-medium )
+      flex-direction: row
+
+    .card__txt
+      order: 2
+      padding-top: 1rem
+      @media screen and ( $min-width-medium )
+        order: 1
+        flex: 1 0 33%
+        padding-right: 2rem
+    .card__img
+      order: 1
+      min-height: 360px
+      @media screen and ( $min-width-medium )
+        order: 2
+        flex: 2 0 66%
+        min-height: 600px
+
+
+// Grid Styles
+// ================================================================
+@if $show-grid-styles
+  @supports (display: grid)
+    .card
+      display: grid
+    .card--newborn
+      grid-row: 1
+      grid-column: 1
+      grid-template-rows: 1fr
+      grid-template-columns: 1fr 1fr
+      grid-gap: 1rem
+      align-items: unset
+
+      @media screen and ( $min-width-medium )
+        grid-template-rows: 1fr 4fr 1fr
+        grid-template-columns: 4fr 3fr
+        grid-gap: 2rem
+      @media screen and ( $min-width-large )
+        grid-template-columns: 3fr 4fr 4fr
+
+
+      .card__txt
+        grid-row: 1
+        grid-column: 2
+        @media screen and ( $min-width-medium )
+          grid-row: 2
+        @media screen and ( $min-width-large )
+          grid-row: 2
+          grid-column: 3/4
+      .card__img
+        grid-row: 1
+        grid-column: 1
+        @media screen and ( $min-width-medium )
+          grid-row: 1/5
+        @media screen and ( $min-width-large )
+          grid-column: 2
+      .card__img--2
+        display: none
+        @media screen and ( $min-width-large )
+          display: grid
+          grid-column: 1
+
+    .card--family
+      grid-row: 2
+      grid-column: 1
+      grid-template-rows: 300px auto
+      grid-template-columns: 1fr
+      grid-gap: 1rem
+      @media screen and ( $min-width-smedium )
+        grid-template-rows: 420px auto
+      @media screen and ( $min-width-medium )
+        grid-template-rows: 1fr 3fr 1fr
+        grid-template-columns: 3fr 5fr
+        grid-gap: 2rem
+      @media screen and ( $min-width-large )
+        grid-template-columns: 1fr 3fr
+
+      .card__txt
+        grid-column: 1
+        grid-row: 2
+
+      .card__img
+        grid-row: 1
+        grid-column: 1
+        min-height: initial
+        @media screen and ( $min-width-medium )
+          grid-row: 1 / 4
+          grid-column: 2
+        @media screen and ( $min-width-xlarge )
+          min-height: 660px

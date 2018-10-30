@@ -1,0 +1,41 @@
+// Contact Page
+// =============================================================================
+.contact
+  color: var( --white )
+  height: var( --height )
+  position: relative
+
+.contact__background
+  // I have opted for all inline styles for the background of this page
+
+.contact__heading
+  color: var( --white )
+  @include flex-centered
+  @include flex-direction(column)
+
+.contact__poster
+  @include order(2)
+
+.contact__cursive
+  @include order(1)
+  text-transform: lowercase
+  transform: translate(-70px, 15px)
+
+.contact__thanks
+  max-width: 90%
+  position: absolute
+  top: 5%
+  right: 0
+  left: 0
+  margin: auto
+  text-align: center
+
+// Non-Grid Styles
+// ================================================================
+@if $show-not-grid-styles
+  // @supports not (display: grid) 
+  .contact .footer
+    padding-top: var(--vertical-spacer)
+    svg
+      fill: var( --white )
+      stroke: var( --white )

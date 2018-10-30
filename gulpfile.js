@@ -7,6 +7,7 @@ const cleanCSS = require('gulp-clean-css');
 const sass = require('gulp-sass');
 const maps = require('gulp-sourcemaps');
 const del = require('del');
+const gutil = require('gulp-util');
 const autoprefixer = require('gulp-autoprefixer');
 
 var jsPaths = [
@@ -24,17 +25,6 @@ var distFiles = [
   'robots.txt',
   '.htaccess'
 ];
-
-gulp.task('critical-css', function(){
-  return gulp.src('./sass/critical.sass')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer({
-        browsers: ['last 2 versions']
-      }))
-    .pipe(cleanCSS())
-    .pipe(rename('_critical_css.php'))
-    .pipe(gulp.dest('incl'));
-});
 
 gulp.task('compile-sass',function(){
   return gulp.src('./sass/app.sass')
@@ -55,7 +45,7 @@ gulp.task('concat-css',['compile-sass'], function(){
 
 gulp.task('minify-css',['concat-css'], function(){
   return gulp.src('css/output.css')
-    .pipe(maps.init({loadMaps:true}))   // create maps from scss *sourcemaps* not the css
+    .pipe(maps.init({ loadMaps: true }))   // create maps from scss *sourcemaps* not the css
     .pipe(cleanCSS())
     .pipe(rename('output.min.css'))
     .pipe(maps.write('./'))
@@ -73,10 +63,11 @@ gulp.task('concat-scripts', function(){
     .pipe(gulp.dest('js'));
 });
 
-gulp.task('minify-scripts',['concat-scripts'], function(){
+gulp.task('minify-scripts', ['concat-scripts'], function(){
   return gulp.src('js/output.js')
-    .pipe(maps.init({loadmaps:true}))
+    .pipe(maps.init({ loadmaps: true }))
     .pipe(uglify())
+    .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
     .pipe(rename('output.min.js'))
     .pipe(maps.write('./'))
     .pipe(gulp.dest('js'));

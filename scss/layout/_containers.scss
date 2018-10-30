@@ -1,0 +1,467 @@
+.body-content {
+    min-height: calc(100vh - 40px);
+    @include breakpoint(medium){
+        min-height: initial;
+        overflow: hidden;
+    }
+}
+
+.off-canvas-content, .off-canvas-content {
+    box-shadow: initial;
+}
+
+.heading .column {
+    @include breakpoint(medium){
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.header-spacer {
+    height: 8vh;
+    background-color: white;
+    position: relative;
+    z-index: 1;
+    @include breakpoint(medium){
+        height: 18vh;
+    }
+}
+
+// Home
+// ==============
+
+.splash section {
+    padding-top: 0;
+    position: relative;
+
+    .heading {
+        position: absolute;
+        z-index: 3;
+        margin-top: 10vh;
+        padding-left: 0;
+        @include breakpoint(medium){
+            margin-top: 40vh;
+            transform: translateY(-50%);
+            padding-left: inherit;
+        }
+        @include breakpoint(large){
+            p {
+                font-size: 1.2rem;
+            }
+        }
+    }
+    .subheading {
+        padding: .6rem 2.6rem;
+        @include breakpoint(medium){
+            padding: 0;
+        }
+    }
+    li {
+        display: block;
+    }
+
+    // may want to use this on small
+    .splash-overlay {
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .splash-image {
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+    }
+    picture > * {
+        display: block;
+        max-width: none;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    @include breakpoint(portrait) {
+        picture > * {
+            width: 88vh;
+        }
+    }
+
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+    .subheading li {
+        display: inline-block;
+        margin-right: 2rem;
+    }
+}
+
+
+// Portfolio
+// ===============
+.portfolio section {
+    .content {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+}
+
+.portfolio-card {
+    height: 360px;
+    position: relative;
+    transition: .15s ease-in-out;
+    padding: 0;
+    z-index: 1;
+    .sub-description {
+        margin-top: 1rem;
+        & a:nth-child(2){
+            margin-left: 2rem;
+        }
+    }
+}
+@include breakpoint (medium down){
+    .portfolio-card {
+        background-color: rgba(90,90,90,.9);
+        .card.card-button span {
+            border-color: rgba(255,255,255,0);
+        }
+        .card.underline span {
+            width: 22%;
+            height: 17%;
+        }
+        .card.description > * {
+            opacity: 1;
+        }
+        & .card.underline > *,
+        & .card.card-button > *,
+        & .card.description > * {
+            transform: translate(0, -60px);
+        }
+    }   
+}
+.card {
+    color: $white;
+    position: absolute; 
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.card-button {
+        &>span {
+            z-index: 2;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        a {
+            position: absolute;
+            top: 0;
+            bottom:0;
+            right:0;
+            left:0;
+        }
+    }
+}
+.card.image{
+    mix-blend-mode: screen;
+    opacity: .35;
+}
+
+@include breakpoint(medium){
+    .portfolio-card .sub-description {
+        opacity: 0;
+        transition: transform .35s ease-in-out;
+    }
+    .portfolio-card:hover {
+        background-color: rgba(90,90,90,.9);
+        .card.card-button span {
+            border-color: rgba(255,255,255,0);
+        }
+        .card.underline span {
+            width: 22%;
+            height: 17%;
+        }
+        .card.description > *,
+        .card .sub-description {
+            opacity: 1;
+        }
+        & .card.underline > *,
+        & .card.card-button > *,
+        & .card.description > *{
+            transform: translate(0, -60px);
+        }   
+    }
+}
+
+
+.card-1 {
+    background-color: rgba(120,120,120,.75);
+    .card.image {
+        background: url("../img/give-r-ecommerce-1.jpg") no-repeat center/cover;
+    }
+}
+.card-2 {
+    background-color: rgba(250, 141, 40, .55);
+    .card.image {
+        background: url("../img/amy-galbraith-blog-1.jpg") no-repeat center/cover;
+    }
+}
+.card-3 {
+    .card {
+        color: $black;
+    }
+    &:hover span{
+        color: $white;
+    }
+}
+.card-4 {
+    background-color: rgba(190,190,190,.75);
+    .card.image {
+        background: url("../img/t-and-c-entertainment-1.jpg") no-repeat center/cover;
+    }
+}
+
+// Portfolio Doodles
+// =================
+
+.doodles {
+    background-color: #f6f6f6;
+    padding-top: 3rem;
+}
+
+.doodle-card {
+    padding: .2rem;
+    min-height: 200px;
+    position: relative;
+    .doodle-inner {
+        border: 1px solid $light-gray;
+        transform: scale(.98);
+        transition: all .16s ease-in-out;
+        box-shadow: 0px 10px 45px -30px rgba(0,0,0,0.2);
+    }
+    .doodle-image {
+        min-height: 300px;
+        border-bottom: 1px solid $light-gray;
+        position: relative;
+    }
+    .doodle-heading {
+        padding: 2rem;
+        background-color: rgba(255,255,255,.8);
+        min-height: 165px;
+    }
+    a {
+        background-color: rgba(255,255,255,.4);
+        @include abs-centered;
+        @include display-flex;
+        @include justify-content(flex-end);
+        @include align-items(flex-start);
+        transition: background-color .16s ease-in-out;
+    }
+    svg {
+        height: 20%;
+        padding: 1rem;
+        opacity: 0;
+        mix-blend-mode: darken;
+        transition: opacity .16s ease-in-out;
+    }
+
+    &:hover {
+        a {
+            background-color: rgba(255,255,255,.6);
+        }
+        svg {
+            opacity: .4;
+        }
+    }
+}
+
+.doodle-1 {
+    .doodle-image {
+        background: left / 500px 500px no-repeat;
+    }
+}
+
+.doodle-2 {
+    .doodle-image {
+        background: center / cover no-repeat;
+    }
+}
+
+.doodle-3 {
+    .doodle-image {
+        background: center / cover no-repeat;
+    }
+    &:hover svg {
+        opacity: .6;
+    }
+}
+
+
+
+
+// About
+// ===================
+
+
+// .title-bar,
+// .about .heading {
+//     background-color: $white;
+//     position: relative;
+//     z-index: 1;
+//     padding-top: 3rem;
+//     padding-bottom: 7rem;
+//     @include breakpoint(medium){
+//         padding-top: initial;
+//     }
+// }
+.about {
+    section {
+        // background: $light-gray;
+        position: relative;
+        z-index: 0;
+        .header-spacer {
+            height: 10vh;
+            @include breakpoint (medium) {
+                height: 28vh;
+            }
+        }
+        .scrollContent {
+            transition: color .4s ease-in-out;
+            padding-right: 1rem;
+            @include breakpoint (medium) {
+                padding-right: 6rem;
+            }
+            @include breakpoint (large) {
+                padding-right: 12rem;
+            }
+        }
+        .img-fill {
+            background: url('../img/SIS.png') center/contain repeat-y;
+            height: 100%;
+        }
+        &:before {
+            content: '';
+            position: fixed;
+            width: 100%;
+            max-width: 1170px;
+            left: 50%;
+            right: auto;
+            transform: translateX(-50%);
+            height: 100vh;
+            transition: background-color .4s ease-in-out;
+            top: 0;
+            will-change: background-color;
+        }
+        // &:after{
+        //     height: 32vh;
+        //     bottom: 0;
+        //     z-index: -2;
+        //     background: $light-gray;
+        // }
+
+        img {
+            display: block;
+            width: 3.6rem;
+            margin: 0 auto;
+            @include breakpoint(medium){
+                width: 12rem;
+            }
+        }
+        .scrollFill,
+        .scrollContent {
+            height: 460px;
+            @include breakpoint (medium){
+                height: 600px;
+            }
+        }
+        .scrollFill {
+            mix-blend-mode: screen;
+            clear: left;
+        }
+        .scrollFill.omega,
+        .scrollContent:last-child {
+            height: 600px;
+            @include breakpoint (medium){
+                height: 800px;
+            }
+        }
+        &.scroll-colors-enabled {
+            .LW, .UW, .JH, .CC, .ME {
+                color: $medium-gray;
+            }
+            &._1_lw {
+                &:before {
+                background-color: purple;
+                }
+                .LW {
+                    color: $black;
+                }
+            }
+            &._2_uw {
+                &:before {
+                background-color: #4B2E84;
+                }
+                .UW {
+                    color: $black;
+                }
+            }
+            &._3_jh {
+                &:before {
+                background-color: #B22222;
+                }
+                .JH {
+                    color: $black;
+                }
+            }
+            &._4_cc {
+                &:before {
+                background-color: #29abe1;
+                }
+                .CC {
+                    color: $black;
+                }
+            }
+            &._5_me {
+                &:before {
+                background-color: $color-primary;
+                }
+                .ME {
+                    color: $black;
+                }
+                .scrollContent a {
+                    color: $dark-gray;
+                    box-shadow: 0px 2px 0px 0px transparentize($color-primary,.2);
+                }
+            }
+        }
+    }
+}
+
+// Contact
+// =======
+
+.contact {
+    label > span {
+        color: $color-primary;
+    }
+    input,
+    textarea {
+        display: block;
+        width: 100%;
+        padding: .33rem;
+    }
+    form > * {
+        margin: 1rem 0;
+    }
+}

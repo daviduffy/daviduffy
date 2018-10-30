@@ -1,0 +1,20 @@
+.gallery
+  @extend .h4
+
+  img
+    pointer-events: none
+
+.g-slider-target:not(.g-slider)
+  background: var( --white )
+  img
+    opacity: 0
+
+.g-slider__curtain
+  height: var( --gs-height )
+  max-height: var( --gs-max-height )
+  
+// Grid Styles
+// ================================================================
+// @supports (display: grid)
+//   .gallery
+    

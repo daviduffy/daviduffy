@@ -1,0 +1,66 @@
+.vendor
+
+  .fancy__heading
+    margin: 0 auto calc( var(--vertical-spacer) / 2 )
+
+.vendor__img
+  background: var( --almost-white ) center/cover no-repeat
+  height: 220px
+  overflow: hidden
+
+
+// Non-Grid Styles
+// ================================================================
+@if $show-not-grid-styles
+  // @supports not (display: grid) 
+  .vendor__img
+    display: flex
+    align-items: stretch
+    justify-content: center
+    picture *
+      height: 220px
+      max-width: initial
+
+  .vendor__img--p
+    position: relative
+    picture *
+      width: 100%
+      height: initial
+      +abs-centered
+
+  .vendor__heading
+    flex: 1 0 100%
+    margin-bottom: 1rem
+
+  .vendor__row
+    display: flex
+    flex-flow: row wrap
+    width: 100%
+    margin-bottom: var( --vertical-spacer )
+
+  .vendor__card
+    min-width: 120px
+    display: flex
+    flex-direction: column
+    flex: 1 0 100%
+    @include fluid-spacing(margin-right, 37.5rem, 80rem, 0.33rem, 1rem)
+
+    @media screen and ( $min-width-smedium )
+      flex: 1 0 calc(50% - 1rem)
+      max-width: calc(50% - 1rem)
+
+    @media screen and ( $min-width-medium )
+      flex: 1 0 calc(33% - 1rem)
+      max-width: calc(33% - 1rem)
+
+    @media screen and ( $min-width-large )
+      flex: 1 0 calc(25% - 1rem)
+      max-width: calc(25% - 1rem)
+
+    @media screen and ( $min-width-xlarge )
+      flex: 1 0 calc(20% - 1rem)
+      max-width: calc(20% - 1rem)
+
+    span
+      letter-spacing: 1.5px
+

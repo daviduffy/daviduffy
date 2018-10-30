@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="final flower generator">
+  <link rel="stylesheet" href="css/flower.css">
+  <title>RGB Flower</title>
+</head>
+<body>
+    <div class="flower"
+        <ul id="bub">
+            <!-- stuff -->
+        </ul>
+    </div>
+    <div class="controls rgb">
+        <div class="color-input-wrapper color-format">
+            <p>Color Format</p>
+            <div class="color-wrapper">
+                <input type="radio" name="color-format" id="rgb-format" value="rgb" checked>
+                <label for="rgb-format">RGB</label>
+                <input type="radio" name="color-format" id="hex-format" value="hex">
+                <label for="hex-format">HEX</label>
+            </div>
+        </div>
+        <div id="color-1" class="color-input-wrapper color-1">
+            <p>Center Color</p>
+            <div id="color-1-rgb" class="color-input">
+                <div class="color-wrapper">
+                        <input class="inputVal" type="number" id="red-1" value="33"></input>
+                        <label for="red-1">R</label>
+                </div>
+                <div class="color-wrapper">
+
+                        <input class="inputVal" type="number" id="green-1" value="150"></input>
+                        <label for="green-1">G</label>
+                </div>
+                <div class="color-wrapper">
+                        <input class="inputVal" type="number" id="blue-1" value="233"></input>
+                        <label for="blue-1">B</label>
+                </div>
+            </div>
+            <div id="color-1-hex" class="color-input">
+                <div class="color-wrapper">
+                    <input type="text" id="hex-1" value="#ffffff">
+                    <label for="hex-1">Hex</label>
+                </div>
+            </div>
+        </div>
+        <div id="color-2" class="color-input-wrapper color-2">
+            <p>Outer Color</p>
+            <div id="color-2-rgb" class="color-input">
+                <div class="color-wrapper">
+                        <input class="inputVal" type="number" id="red-2" value="254"></input>
+                        <label for="red-2">R</label>
+                </div>
+                <div class="color-wrapper">
+
+                        <input class="inputVal" type="number" id="green-2" value="111"></input>
+                        <label for="green-2">G</label>
+                </div>
+                <div class="color-wrapper">
+                        <input class="inputVal" type="number" id="blue-2" value="0"></input>
+                        <label for="blue-2">B</label>
+                </div>
+            </div>
+            <div id="color-2-hex" class="color-input">
+                <div class="color-wrapper">
+                    <input type="text" id="hex-2" value="ff6f00">
+                    <label for="hex-2">Hex</label>
+                
+                </div>
+            </div>
+        </div>
+        <div class="color-input-wrapper steps">
+            <p>Rings of Petals</p>
+            <input type="number" id="steps" value="6"></input>
+        </div>
+        <a href="JavaScript:void(0)" id="submit">submit</a>
+    </div>
+    <script src="js/flower.js"></script>
+</body>
+</html>

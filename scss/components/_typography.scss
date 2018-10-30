@@ -1,0 +1,178 @@
+
+body {
+    letter-spacing: -.4px;
+}
+
+a {
+    outline-color: $light-gray;
+}
+
+.off-canvas a {
+    color: $black;
+}
+
+.heading {
+    font-size: .82rem;
+    & > .column {
+        padding: 0;
+    }
+    .blurb {
+        line-height: 1rem;
+        margin-top: .8rem;
+        @include breakpoint(large){
+            padding-left: 0;
+            text-align: right;
+        }
+        span {
+            font-size: .8rem;
+        }
+    }
+    a {
+        color: darken($dark-gray,18%);
+        font-size: 1.1rem;
+        text-shadow: -1px -1px 4px rgba(255,255,255,.3), -1px 1px 4px rgba(255,255,255,.3), 1px -1px 4px rgba(255,255,255,.3), 1px 1px 4px rgba(255,255,255,.3), 0px 0px 15px white;
+    }
+}
+
+
+// Home
+// ====
+.home {
+    h1.small-title {
+        font-family: $font-family-sans-serif;
+        background-color: $color-primary;
+        padding: 0 .5rem 0 2.5rem;
+        display: inline-block;
+        color: $white;
+        font-size: 2.4rem;
+        font-weight: 700;
+        letter-spacing: -.9px;
+        text-transform: uppercase;
+        @include breakpoint(medium){
+            font-weight:300;
+        }
+    }
+    h2 {
+        font-weight: 700;
+    }
+}
+
+// Portfolio
+// =========
+.portfolio-heading {
+    h2 {
+        font-size: 1.2rem;
+        line-height: 1;
+        margin-left: 1rem;
+        @include breakpoint(medium){
+            font-size: 2rem;;
+        }
+    }
+}
+.card {
+    font-family: sans-serif;
+    a {
+        color: inherit;
+    }
+    &>span {
+        color: inherit;
+        font-size: 1.4rem;
+        display: inline-block;
+        text-align: center;
+        width: 70%;
+        height: 25%;
+        border: 1px solid;
+        padding: .42rem 1.8rem;
+        transition: all .35s ease-in-out;
+        @include breakpoint(medium){
+            width: 50%;
+        }
+    }
+    &.underline span {
+        border: initial;
+        border-bottom: 1px solid;
+    }
+    &.description span {
+        z-index: 3;
+        border: initial;
+        font-size: 1rem;
+        margin-top: 11.4rem;
+        opacity: 0;
+        width: 90%;
+        display: block;
+        a:hover {text-decoration: underline}
+        @include breakpoint(medium){
+            width: 70%;
+        }
+    }
+    //.meta
+    .tech,
+    .platform {
+        font-size: 1rem;
+        opacity: 1 ;
+        border: none;
+        position: absolute;
+        top: 0;
+        width: initial;
+        padding: .2rem .8rem;
+    }
+    .tech {
+        left: 0;
+        text-align: left;
+    }
+    .platform {
+        right: 0;
+    }
+}
+
+.doodle-heading {
+    font-family: $font-family-sans-serif;
+    h3 {
+        font-family: inherit;
+        font-size: 1.3rem;
+    }
+    p {
+        font-size: .94rem;
+    }
+}
+
+// About
+// =====
+
+.about .scrollContent {
+    h2 {
+        font-size: 1.6rem;
+        @include breakpoint(medium){
+            margin-top: .5rem;
+            font-size: 2rem;
+            border-bottom: 1px solid $light-gray;
+        }
+    }
+    p,
+    span {
+        font-family: "Open Sans", sans-serif;
+    }
+    &>span {
+        display: block;
+        font-size: .8rem;
+        &>span {
+            font-weight: bold;
+            display: block;
+        }
+    }
+    p {
+        font-size: .9rem;
+        @include breakpoint(medium){
+            font-size: 1rem;
+        }
+    }
+    .year {
+        float: right;
+        position: relative;
+        top: -2rem;
+    }
+    a {
+        color: $light-gray;
+        box-shadow: 0px 2px 0px 0px transparentize($color-primary,.8);
+    }
+}
