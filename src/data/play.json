@@ -1,0 +1,22 @@
+[
+  {
+    "id": "sudoku",
+    "name": "Sudoku Magician",
+    "content": "Solve any existing sudoku or create a new one"
+  },
+  {
+    "id": "number-puzzle",
+    "name": "Number Puzzle",
+    "content": "Classic 1-15 number puzzle"
+  },
+  {
+    "id": "color-flower",
+    "name": "Color Map Generator",
+    "content": "Create a flower with <i>n</i> steps between any two colors (RGB)"
+  },
+  {
+    "id": "hover-circles",
+    "name": "Hover circle generator",
+    "content": "Split circles by hovering. Put them back together before time runs out!"
+  }
+]

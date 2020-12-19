@@ -2,11 +2,23 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CreateFileWebpack = require('create-file-webpack');
+const html = require('html.config.js');
 
 const devMode = process.env.NODE_ENV !== 'production';
 
+const htmlOptions = {
+  // path to folder in which the file will be created
+  path: './dist',
+  // file name
+  fileName: 'index.html',
+  // content of the file
+  content: html,
+}
+
 const plugins = [
   new CleanWebpackPlugin(),
+  new CreateFileWebpack({ options: htmlOption }),
   new CopyPlugin({
     patterns: [
       {

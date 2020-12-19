@@ -6,7 +6,7 @@
     "text": [
       "In High School I kind of kicked off my interest in web development with an Adobe Flash class, which was actually a cool technology at the time. I did some e-Commerce marketing stuff in the DECA program as well.",
       "Flash: basic web design concepts, animation keyframing, that sort of thing",
-      "e-Com Marketing: learned how to fill out a job application without making a grammatical error",
+      "e-Com Marketing: learned how to fill out a job application without making a grammatical error"
     ]
   },
   {
@@ -38,14 +38,14 @@
       "Customer Service: refined that ever-important ability to explain technical subject matter to non-technical persons",
       "Design/Development: went from 4th-grade reading level to fluent in HTML/SCSS and can do work with JS as well",
       "Product Management: learned to build consensus, to adapt to uncertainty, and a lot about agile process",
-      "Frontend Development: learned to work with old and new technologies and apply all my previous experience to build creative, awesome products",
+      "Frontend Development: learned to work with old and new technologies and apply all my previous experience to build creative, awesome products"
     ]
   },
   {
     "id": "REI",
     "name" : "REI",
     "year" : "2019 - Present",
-    "text" : ""
+    "text" : []
   },
   {
     "id": "ME",
@@ -56,7 +56,7 @@
       "Snowboarding: In 2009 I moved to Jackson, WY just to snowboard. Inadvertently, the jobs that I had there laid the groundwork for pursuing web develoment.",
       "Halo Suit: I think armor costumes are cool. Like a true DIY enthusiast, I watched about 2 minutes of a YouTube video and figured <br class='show-for-medium'>I could make one too. <a target='_blank' href='http://imgur.com/a/D7oUQ#0' title='photo gallery [imgur] of my self-made Halo 3 MJOLNIR Mark VI suit'>It went better than expected.",
       "Web Develoment: The world of webdev is basically endless, and it can be self-taught. It may seem strange because web development is just work for so many people, but for me it's a fun world to explore.",
-      "If you read all of that, it's probably time to <a href='#portfolio'>look at my portfolio.",
+      "If you read all of that, it's probably time to <a href='#portfolio'>look at my portfolio."
     ]
   }
 ]
