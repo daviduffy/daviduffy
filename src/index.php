@@ -12,7 +12,7 @@ $pageExt = '';
     <title>David Duffy | daviduffy | Web Designer &amp; Developer<?php if ($pageTitle) echo ' | ' . $pageTitle; ?></title>
     <meta name="description" content="A portfolio site created by David Duffy (aka daviduffy), a web designer and developer from Seattle, Washington." />
     <meta itemprop="description" content="A portfolio site created by David Duffy (aka daviduffy), a web designer and developer from Seattle, Washington." />
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel='shortcut icon' href='img/fav.ico' type='image/x-icon'/ >
     <meta itemprop="name" content="David Duffy"/>
     <meta itemprop="url" content="http://daviduffy.me"/>
@@ -60,8 +60,7 @@ $pageExt = '';
         </section>
       </main>
     </div>
-
-    <script src="js/output.min.js"></script>
+    <script src="js/main.bundle.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

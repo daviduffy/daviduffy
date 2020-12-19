@@ -1,3 +1,5 @@
+import '../scss/app.scss';
+
 const oc = {
   toggleClassMenu: function() {
     oc.menu.classList.add('oc--anim');
@@ -24,9 +26,7 @@ const oc = {
       link.addEventListener("click", oc.toggleClassMenu, false);
     })
   }
-}
-
-window.oc = oc;
+};
 
 (function() {
     var $body = document.getElementsByTagName('body')[0];
@@ -148,7 +148,7 @@ window.oc = oc;
                 app.prevRoute = app.routes[app.prevRouteID];
 
                 // and run exited function
-                if (app.prevRoute.exited) {
+                if (app.prevRoute && app.prevRoute.exited) {
                     app.prevRoute.exited();
                 }
             }
@@ -205,4 +205,3 @@ window.oc = oc;
 })();
 
 app.init();
-//# sourceMappingURL=output.js.map

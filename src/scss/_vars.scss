@@ -42,14 +42,41 @@ $color-primary: rgba(250, 141, 40, 1);
 $grid-row-width: $global-width;
 
 :root {
-// Easing
-// ===========================================================================
-  --drop-in-easing-bezier      : .73, .14, 1, .99;
-  --short-easing-duration      : 0.18s;
-  --standard-easing-duration   : 0.33s;
-  --long-easing-duration       : 0.66s;
-  --standard-easing-bezier     : 0.56, 0.26, 0.37, 0.98;
-  --drop-in-animation-delay    : 0.77s;
+  // Colors
+  // ===========================================================================
+
+  // Base
+  --white                      : #fefefe;
+  --almost-white               : #e2e2e2;
+  --light-gray                 : #cccccc;
+  --medium-gray                : #999999;
+  --dark-gray                  : #666666;
+  --black                      : #0a0a0a;
+
+  // Theme
+  --warm-dark-gray             : rgb(70, 65, 62);
+  --mustard-yellow             : rgb(204, 153, 51);
+  --dusty-teal                 : rgb(85, 100, 107);
+  --stormy-blue                : rgb(201, 206, 209);
+  --color-action               : #518de5; // blue
+
+  // Typography
+  --color-text-normal          : var( --black );
+  --color-text-inverted        : var( --white );
+  --font-cursive               : 'La Belle Aurore', sans-serif;
+  --font-poster                : 'Oswald', sans-serif;
+  --font-sans                  : 'Montserrat', tahoma, helvetica, sans-serif;
+  --font-serif                 : 'Crimson Text', serif;
+
+  // Easing
+  // ===========================================================================
+    --drop-in-easing-bezier      : .73, .14, 1, .99;
+    --short-easing-duration      : 0.18s;
+    --standard-easing-duration   : 0.33s;
+    --long-easing-duration       : 0.66s;
+    --standard-easing-bezier     : 0.56, 0.26, 0.37, 0.98;
+    --drop-in-animation-delay    : 0.77s;
+
 }
 
 

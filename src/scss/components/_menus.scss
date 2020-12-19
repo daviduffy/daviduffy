@@ -51,7 +51,7 @@
 }
 
 .oc__x {
-  @include abs-centered
+  @include abs-centered;
   z-index: -1;
 }
 
