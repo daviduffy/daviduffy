@@ -1,3 +1,4 @@
+const Menu = () => `
 <header class="oc__head">
   <p class="h2 t-poster txt-c">Menu</p>
   <button class="oc__trg svg-b" title="close">
@@ -11,3 +12,6 @@
     <li><a href="#contact" class="a a--f a--menu">Contact</a></li>
   </ul>
 </nav>
+`;
+
+exports.default = Menu();

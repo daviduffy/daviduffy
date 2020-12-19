@@ -3,7 +3,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CreateFileWebpack = require('create-file-webpack');
-const html = require('html.config.js');
+const html = require('./html.config.js').default;
 
 const devMode = process.env.NODE_ENV !== 'production';
 
@@ -18,21 +18,15 @@ const htmlOptions = {
 
 const plugins = [
   new CleanWebpackPlugin(),
-  new CreateFileWebpack({ options: htmlOption }),
+  new CreateFileWebpack(htmlOptions),
   new CopyPlugin({
     patterns: [
-      {
-        from: 'incl/**',
-        to: path.resolve(__dirname, 'dist'),
-        context: 'src/',
-      },
       {
         from: 'img/**',
         to: path.resolve(__dirname, 'dist'),
         context: 'src/',
       },
       ...[
-        'index.php',
         'robots.txt',
         'sitemap.xml'
       ].map((filename) => ({
