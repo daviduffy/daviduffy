@@ -12,9 +12,9 @@ const About = () => `
       <div>
         <h2>${entry.name}</h2>
         <span class="year">${entry.year}</span>
-        ${entry.text.map((line) => `<p>${line}</p>`)}
+        ${entry.text.map((line) => `<p>${line}</p>`).join('')}
       </div>`
-    ))}
+    )).join('')}
 `;
 
 exports.default = About();

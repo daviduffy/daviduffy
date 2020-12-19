@@ -47,7 +47,7 @@ const oc = {
                     } 
 
                     // set heights of DOM elements again just in case they aren't set yet
-                    MyAbout.setHeights();
+                    // MyAbout.setHeights();
 
                     // enable color changes to icon elements on scroll
                     window.addEventListener('scroll', MyAbout.scrollTrigger );
@@ -64,12 +64,12 @@ const oc = {
                     MyAbout.aboutElement      = document.getElementById('about');
                     MyAbout.aboutElement.classList.add('scroll-colors-enabled','_1_lw');
 
-                    MyAbout.setHeights        = function () {
-                        this.aboutHeight      = this.aboutElement.scrollHeight;
-                        this.headHeight       = document.querySelectorAll('#about .header-spacer')[0].scrollHeight;
-                        this.screenHeight     = window.innerHeight;
-                        this.adjustedHeight   = this.aboutHeight - this.headHeight - ( this.screenHeight / 2 );
-                    }; 
+                    // MyAbout.setHeights        = function () {
+                    //     this.aboutHeight      = this.aboutElement.scrollHeight;
+                    //     this.headHeight       = document.querySelectorAll('#about .header-spacer')[0].scrollHeight;
+                    //     this.screenHeight     = window.innerHeight;
+                    //     this.adjustedHeight   = this.aboutHeight - this.headHeight - ( this.screenHeight / 2 );
+                    // }; 
                     MyAbout.changeClasses     = function ( element , string ) {
                         element.classList.remove('_1_lw', '_2_uw', '_3_jh', '_4_cc', '_5_me');
                         element.classList.add( string );
@@ -158,8 +158,8 @@ const oc = {
             app.newRoute = app.routes[app.newRouteID];
 
             // classes housekeeping
-            $body.classList = '';
-            $body.classList.add( app.newRouteID );
+            // $body.classList = '';
+            // $body.classList.add( app.newRouteID );
 
 
             // run entered function

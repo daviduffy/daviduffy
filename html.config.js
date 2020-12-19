@@ -1,20 +1,22 @@
 const htmlTemplate = require('./src/index.html.js').default;
-const Menu = require('./src/js/components/menu').default;
-const Header = require('./src/js/components/header').default;
-const About = require('./src/js/components/about').default;
-const Portfolio = require('./src/js/components/portfolio').default;
-const Contact = require('./src/js/components/contact').default;
-const Splash = require('./src/js/components/splash').default;
+const Menu = require('./src/js/components/Menu').default;
+const Offcanvas = require('./src/js/components/Offcanvas').default;
+const Header = require('./src/js/components/Header').default;
+const About = require('./src/js/components/About').default;
+const Portfolio = require('./src/js/components/Portfolio').default;
+const Contact = require('./src/js/components/Contact').default;
+const Splash = require('./src/js/components/Splash').default;
 
 const prod = process.env.NODE_ENV === 'production';
 
 const html = htmlTemplate
-  .replace('{{ menu }}', Menu)
-  .replace('{{ header }}', Header)
-  .replace('{{ about }}', About)
-  .replace('{{ portfolio }}', Portfolio)
-  .replace('{{ contact }}', Contact)
-  .replace('{{ splash }}', Splash);
+  .replace('{{ Menu }}', Menu)
+  .replace('{{ Offcanvas }}', Offcanvas)
+  .replace('{{ Header }}', Header)
+  .replace('{{ About }}', About)
+  .replace('{{ Portfolio }}', Portfolio)
+  .replace('{{ Contact }}', Contact)
+  .replace('{{ Splash }}', Splash);
 
 const minifiedHtml = html.replace(/>\s+</g, '><');
 

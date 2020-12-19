@@ -25,44 +25,44 @@ exports.default = `<!doctype html>
     <meta property="og:image" content="http://daviduffy.me/img/splash/david-duffy-designer-developer-product-owner-2-1024.jpg" />
     <meta property="og:description" content="A portfolio site created by David Duffy (aka daviduffy), a web designer and developer from Seattle, Washington." />
     <link rel="canonical" href="http://daviduffy.me">
+    <!-- TODO: deal with loading fonts better -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Open+Sans:400,600,300">
   </head>
 
-  <body class="splash">
+  <body>
     <div class="oc">
       <div class="oc__menu">
 
-        {{ menu }}
+        {{ Offcanvas }}
 
       </div>
       <div class="oc__x"></div>
     </div>
 
-      {{ header }}
+      {{ Header }}
 
-    <div class="home">
-      <main>
-        <section id="about">
+    <main class="content">
+      <section id="about">
 
-          {{ about }}
+        {{ About }}
 
-        </section>
-        <section id="portfolio">
+      </section>
+      <section id="portfolio">
 
-          {{ portfolio }}
+        {{ Portfolio }}
 
-        </section>
-        <section id="contact">
+      </section>
+      <section id="contact">
 
-          {{ contact }}
+        {{ Contact }}
 
-        </section>
-        <section id="splash">
+      </section>
 
-          {{ splash }}  
+      {{ Splash }}  
 
-        </section>
-      </main>
-    </div>
+    </main>
+    <footer>some footer</footer>
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
     <script src="js/main.bundle.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

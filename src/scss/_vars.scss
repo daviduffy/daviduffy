@@ -1,9 +1,6 @@
 // Typography
 // ----------
 
-@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css");
-@import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700|Open+Sans:400,600,300");
-
 $global-font-size: 100%;
 $global-width: 1200px;
 $global-lineheight: 1.5;
@@ -54,19 +51,14 @@ $grid-row-width: $global-width;
   --black                      : #0a0a0a;
 
   // Theme
-  --warm-dark-gray             : rgb(70, 65, 62);
-  --mustard-yellow             : rgb(204, 153, 51);
-  --dusty-teal                 : rgb(85, 100, 107);
-  --stormy-blue                : rgb(201, 206, 209);
+  --warm-orange                : #fa8d28;
   --color-action               : #518de5; // blue
 
   // Typography
   --color-text-normal          : var( --black );
   --color-text-inverted        : var( --white );
-  --font-cursive               : 'La Belle Aurore', sans-serif;
-  --font-poster                : 'Oswald', sans-serif;
-  --font-sans                  : 'Montserrat', tahoma, helvetica, sans-serif;
-  --font-serif                 : 'Crimson Text', serif;
+  --font-monospace             : Inconsolata, "Liberation Mono", Courier, monospace;
+  --font-sans                  : 'Open Sans', tahoma, helvetica, sans-serif;
 
   // Easing
   // ===========================================================================
@@ -77,6 +69,10 @@ $grid-row-width: $global-width;
     --standard-easing-bezier     : 0.56, 0.26, 0.37, 0.98;
     --drop-in-animation-delay    : 0.77s;
 
+  // Sizing
+  // ===========================================================================
+    --header-height             : 2.6rem;
+    --header-height-inverted    : -2.6rem;
 }
 
 

@@ -1,3 +1,26 @@
+.h {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: var(--header-height);
+  z-index: 1;
+}
+
+.h__trg {
+  @media screen and (min-width: $breakpoint-medium) {
+    display: none;
+  }
+}
+
+.h__home {
+  display: none;
+  @media screen and (min-width: $breakpoint-medium) {
+    display: initial;
+  }
+}
+
+
 // .title-bar,
 // .top-bar {
 //     position: absolute;
