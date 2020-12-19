@@ -1,22 +1,16 @@
-      <div class="footer">
-        <div class="footer__credits">
-          <span>&copy;</span><span>&nbsp;Nove.io</span>
-        </div>
-        <div class="footer__business-garbage">
-          <a class="h6" href="/terms">Terms and Conditions</a>
-          <span class="h6">&nbsp;|&nbsp;</span>
-          <a class="h6" href="/privacy">Privacy Policy</a>
-        </div>
       </div>
-    </main>
-    <script src="<?php echo $pathModifier; ?>js/output.min.js"></script>
+    </div>
+
+    <script src="js/output.min.js"></script>
     <script>
-      // scroll.init();
-      <?php
-        if (isset($footerScript)) {
-          echo "$footerScript";
-        }
-      ?>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-82438905-1', 'auto');
+      ga('send', 'pageview');
+
     </script>
   </body>
 </html>

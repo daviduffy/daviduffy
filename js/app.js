@@ -1,26 +1,45 @@
-$(document).foundation();
-$(document).ready(function(){
-    console.log('¸.·´¯`·.´¯`·.¸¸.·´¯`·.¸><(((º>');
-    // hotfix for menu
-    $('.off-canvas .menu a').click(function(){
-      $('#offCanvasLeft').foundation('close');
-      // required otherwise foundation actually shows/hides opposite of the correct time
-      $('.off-canvas.position-left').css('display','none');
-    });
-});
+const oc = {
+  toggleClassMenu: function() {
+    oc.menu.classList.add('oc--anim');
+    if (!oc.menu.classList.contains('oc--vis')) {
+      oc.menu.classList.add('oc--vis');
+    } else {
+      oc.menu.classList.remove('oc--vis');
+    }
+  },
+  OnTransitionEnd: function() {
+    oc.menu.classList.remove('oc--anim');
+  },
+  menu: document.querySelector('.oc'),
+  bars: document.querySelector('.h__trg'),
+  times: document.querySelector('.oc__trg'),
+  bg: document.querySelector('.oc__x'),
+  links: Array.from(document.querySelectorAll('.a--menu')),
+  init: function(){
+    oc.menu.addEventListener("transitionend", oc.OnTransitionEnd, false);
+    oc.bars.addEventListener("click", oc.toggleClassMenu, false);
+    oc.bg.addEventListener("click", oc.toggleClassMenu, false);
+    oc.times.addEventListener("click", oc.toggleClassMenu, false);
+    oc.links.forEach(function(link) {
+      link.addEventListener("click", oc.toggleClassMenu, false);
+    })
+  }
+}
+
+window.oc = oc;
 
 (function() {
     var $body = document.getElementsByTagName('body')[0];
     var app = {
         // routes (i.e. views and their functionality) defined here
-        'routes': {
-            'splash': {
-                'entered': function() {
+        routes: {
+            splash: {
+                entered: function() {
                     // app.newRouteElem.innerHTML = '<p>This JavaScript content overrides the static content for this view.</p>';
                 }
              },
-            'about': {
-                'entered': function() {
+            about: {
+                entered: function() {
 
                     // if the MyAbout object doesn't exist yet, create it
                     if ( !window.MyAbout ) {
@@ -35,7 +54,7 @@ $(document).ready(function(){
 
                      // app.newRouteElem.innerHTML = '<p>This JavaScript content overrides the static content for this view.</p>';
                     },
-                    'aboutInit': function() {
+                    aboutInit: function() {
 
                     // create the about object container
                     window.MyAbout = {};
@@ -72,7 +91,7 @@ $(document).ready(function(){
                           MyAbout.changeClasses(MyAbout.aboutElement, '_5_me');
                         }
                     };
-                    MyAbout.scrollQuery       = function ( int1, int2 ) {
+                    MyAbout.scrollQuery = function ( int1, int2 ) {
                         if (
                             ( window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0 ) >= ( MyAbout.adjustedHeight * int1 ) &&
                             ( window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0 ) < ( MyAbout.adjustedHeight * int2 )
@@ -82,7 +101,7 @@ $(document).ready(function(){
                             return false;
                         }
                     };
-                    MyAbout.scrollTrigger      = function () {
+                    MyAbout.scrollTrigger = function () {
 
                         // delay firing this function until a new scroll event hasn't happened for 30ms
                         if (MyAbout.scrollTimer) {
@@ -94,32 +113,32 @@ $(document).ready(function(){
                         // set new timer
                         MyAbout.scrollTimer = setTimeout(MyAbout.handleScroll, 30);   
                     };
-                    MyAbout.handleScroll      = function () {
+                    MyAbout.handleScroll = function () {
                         console.log('scroll');
                         window.MyAbout.scrollTracker();
                     };
                 },
-                'exited' : function(){
+                exited: function(){
                     console.log('exiting');
                     // remove scroll event listener
                     window.removeEventListener('scroll', MyAbout.scrollTrigger );
                 }
             },
-            'portfolio': {
-                'entered': function() {
+            portfolio: {
+                entered: function() {
                     // app.newRouteElem.innerHTML = '<p>This JavaScript content overrides the static content for this view.</p>';
                 }
             },
-            'contact': {
-                'entered': function() {
+            contact: {
+                entered: function() {
                      // app.newRouteElem.innerHTML = '<p>This JavaScript content overrides the static content for this view.</p>';
                 }
             }
         },
         // The default view is recorded here. A more advanced implementation
         // might query the DOM to define it on the fly.
-        'default': 'splash',
-        'routeChange': function(e) {
+        default: 'splash',
+        routeChange: function(e) {
 
             // if this function was triggered by a hashchange set previous route info
             if (e) {
@@ -151,8 +170,9 @@ $(document).ready(function(){
 
         },
 
-        // The function to start the app
-        'init': function() {
+        init: function() {
+
+            oc.init();
 
             // just in case newURL and oldURL aren't supported
             if(!window.HashChangeEvent)(function(){

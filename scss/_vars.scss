@@ -4,6 +4,57 @@
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css");
 @import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700|Open+Sans:400,600,300");
 
+$global-font-size: 100%;
+$global-width: 1200px;
+$global-lineheight: 1.5;
+$foundation-palette: (
+  primary: #2199e8,
+  secondary: #777,
+  success: #3adb76,
+  warning: #ffae00,
+  alert: #ec5840,
+);
+$light-gray: #e6e6e6;
+$medium-gray: #cacaca;
+$dark-gray: #8a8a8a;
+$black: #0a0a0a;
+$white: #fefefe;
+$body-background: $white;
+$body-font-color: $black;
+$font-family-sans-serif:'Open Sans', Helvetica, Roboto, Arial, sans-serif;
+$font-family-monospace: Inconsolata, 'Liberation Mono', Courier, monospace;
+$body-font-family: $font-family-monospace;
+$body-antialiased: true;
+$global-margin: 1rem;
+$global-padding: 1rem;
+$global-weight-normal: normal;
+$global-weight-bold: bold;
+$global-radius: 0;
+$global-text-direction: ltr;
+$global-flexbox: false;
+$print-transparent-backgrounds: true;
+
+
+// colors
+$color-primary: rgba(250, 141, 40, 1);
+
+// grid
+$grid-row-width: $global-width;
+
+:root {
+// Easing
+// ===========================================================================
+  --drop-in-easing-bezier      : .73, .14, 1, .99;
+  --short-easing-duration      : 0.18s;
+  --standard-easing-duration   : 0.33s;
+  --long-easing-duration       : 0.66s;
+  --standard-easing-bezier     : 0.56, 0.26, 0.37, 0.98;
+  --drop-in-animation-delay    : 0.77s;
+}
+
+
+$breakpoint-medium: unquote("640px");
+$breakpoint-large: unquote("1024px");
 
 
 // Utilities
