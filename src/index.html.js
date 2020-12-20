@@ -61,7 +61,7 @@ exports.default = `<!doctype html>
       {{ Splash }}  
 
     </main>
-    <footer>some footer</footer>
+    <!-- <footer>some footer</footer> -->
     <script async src="https://www.google-analytics.com/analytics.js"></script>
     <script src="js/main.bundle.js"></script>
     <script>

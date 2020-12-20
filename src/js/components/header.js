@@ -1,3 +1,5 @@
+const Menu = require('./Menu').default;
+
 const Header = () => `
 <header class="h">
   <button class="h__trg oc__trg" style="margin: 0; padding: 0.25rem" title="open">
@@ -5,7 +7,9 @@ const Header = () => `
       <path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path>
     </svg>
   </button>
-  <a class="h__home" href="#splash"><span>David </span>Duffy</a>
+  <div class="h__menu">
+    ${Menu}
+  </div>
 </header>
 `;
 

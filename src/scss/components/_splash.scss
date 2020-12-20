@@ -3,11 +3,14 @@
   margin-top: var(--header-height-inverted);
   position: relative;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .splash__heading {
   position: relative;
   padding: 4rem 0 0 2.75rem;
+  padding-top: clamp(4rem, calc(2rem + 14vw), 300px);
+  padding-left: clamp(2.75rem, 8vw, 400px);
 }
 
 .splash__name {
@@ -16,7 +19,6 @@
   padding: 0.125rem 0.5rem 0.125rem 0;
   display: inline-block;
   color: var(--color-text-inverted);
-  font-size: 2.4rem;
   font-weight: 700;
   letter-spacing: -.9px;
   text-transform: uppercase;
