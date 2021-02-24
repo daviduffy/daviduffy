@@ -2,21 +2,31 @@
   {
     "id": "sudoku",
     "name": "Sudoku Magician",
-    "content": "Solve any existing sudoku or create a new one"
+    "content": "Solve any existing sudoku or create a new one",
+    "url": "https://blog.nove.io/sudoku/"
   },
   {
     "id": "number-puzzle",
     "name": "Number Puzzle",
-    "content": "Classic 1-15 number puzzle"
+    "content": "Classic 1-15 number puzzle",
+    "url": "https://blog.nove.io/number-slide-puzzle/"
+  },
+  {
+    "id": "reversi",
+    "name": "Reversi",
+    "content": "2-player strategy board game played on an 8×8 uncheckered board",
+    "url": "https://blog.nove.io/reversi/"
   },
   {
     "id": "color-flower",
     "name": "Color Map Generator",
-    "content": "Create a flower with <i>n</i> steps between any two colors (RGB)"
+    "content": "Create a flower with <i>n</i> steps between any two colors (RGB)",
+    "url": "/demos/sudoku"
   },
   {
     "id": "hover-circles",
     "name": "Hover circle generator",
-    "content": "Split circles by hovering. Put them back together before time runs out!"
+    "content": "Split circles by hovering. Put them back together before time runs out!",
+    "url": "/demos/sudoku"
   }
 ]

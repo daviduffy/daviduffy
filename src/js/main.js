@@ -1,4 +1,4 @@
-import '../scss/app.scss';
+import styles from '../scss/app.scss';
 
 const oc = {
   toggleClassMenu: function() {
@@ -16,7 +16,7 @@ const oc = {
   bars: document.querySelector('.h__trg'),
   times: document.querySelector('.oc__trg'),
   bg: document.querySelector('.oc__x'),
-  links: Array.from(document.querySelectorAll('.a--menu')),
+  links: Array.from(document.querySelectorAll('.oc .a--menu')),
   init: function(){
     oc.menu.addEventListener("transitionend", oc.OnTransitionEnd, false);
     oc.bars.addEventListener("click", oc.toggleClassMenu, false);
@@ -38,92 +38,6 @@ const oc = {
                     // app.newRouteElem.innerHTML = '<p>This JavaScript content overrides the static content for this view.</p>';
                 }
              },
-            about: {
-                entered: function() {
-
-                    // if the MyAbout object doesn't exist yet, create it
-                    if ( !window.MyAbout ) {
-                        window.onload = app.newRoute.aboutInit();
-                    } 
-
-                    // set heights of DOM elements again just in case they aren't set yet
-                    // MyAbout.setHeights();
-
-                    // enable color changes to icon elements on scroll
-                    window.addEventListener('scroll', MyAbout.scrollTrigger );
-
-                     // app.newRouteElem.innerHTML = '<p>This JavaScript content overrides the static content for this view.</p>';
-                    },
-                    aboutInit: function() {
-
-                    // create the about object container
-                    window.MyAbout = {};
-
-                    // fill it with things
-                    MyAbout.scrollTimer       = null;
-                    MyAbout.aboutElement      = document.getElementById('about');
-                    MyAbout.aboutElement.classList.add('scroll-colors-enabled','_1_lw');
-
-                    // MyAbout.setHeights        = function () {
-                    //     this.aboutHeight      = this.aboutElement.scrollHeight;
-                    //     this.headHeight       = document.querySelectorAll('#about .header-spacer')[0].scrollHeight;
-                    //     this.screenHeight     = window.innerHeight;
-                    //     this.adjustedHeight   = this.aboutHeight - this.headHeight - ( this.screenHeight / 2 );
-                    // }; 
-                    MyAbout.changeClasses     = function ( element , string ) {
-                        element.classList.remove('_1_lw', '_2_uw', '_3_jh', '_4_cc', '_5_me');
-                        element.classList.add( string );
-                    };
-                    MyAbout.scrollTracker     = function ( event ) {
-                        if ( MyAbout.scrollQuery( 0, 0.13 )) {
-                          MyAbout.changeClasses(MyAbout.aboutElement, '_1_lw');
-                        }
-                        if ( MyAbout.scrollQuery( 0.131, 0.34 )) {
-                          MyAbout.changeClasses(MyAbout.aboutElement, '_2_uw');
-                        }
-                        if ( MyAbout.scrollQuery( 0.341, 0.57 )) {
-                          MyAbout.changeClasses(MyAbout.aboutElement, '_3_jh');
-                        }
-                        if ( MyAbout.scrollQuery( 0.571 , 0.79 )) {
-                          MyAbout.changeClasses(MyAbout.aboutElement, '_4_cc');
-                        }
-                        if ( MyAbout.scrollQuery( 0.791, 1 )) {
-                          MyAbout.changeClasses(MyAbout.aboutElement, '_5_me');
-                        }
-                    };
-                    MyAbout.scrollQuery = function ( int1, int2 ) {
-                        if (
-                            ( window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0 ) >= ( MyAbout.adjustedHeight * int1 ) &&
-                            ( window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0 ) < ( MyAbout.adjustedHeight * int2 )
-                         ) {
-                            return true;
-                        } else {
-                            return false;
-                        }
-                    };
-                    MyAbout.scrollTrigger = function () {
-
-                        // delay firing this function until a new scroll event hasn't happened for 30ms
-                        if (MyAbout.scrollTimer) {
-
-                            // clear any previous pending timer
-                            clearTimeout(MyAbout.scrollTimer);   
-                        }
-
-                        // set new timer
-                        MyAbout.scrollTimer = setTimeout(MyAbout.handleScroll, 30);   
-                    };
-                    MyAbout.handleScroll = function () {
-                        console.log('scroll');
-                        window.MyAbout.scrollTracker();
-                    };
-                },
-                exited: function(){
-                    console.log('exiting');
-                    // remove scroll event listener
-                    window.removeEventListener('scroll', MyAbout.scrollTrigger );
-                }
-            },
             portfolio: {
                 entered: function() {
                     // app.newRouteElem.innerHTML = '<p>This JavaScript content overrides the static content for this view.</p>';
@@ -147,6 +61,8 @@ const oc = {
                 app.prevRouteID = e.oldURL.split("#")[1];
                 app.prevRoute = app.routes[app.prevRouteID];
 
+                // console.log({ prevRoute: app.prevRoute, prevRouteID: app.prevRouteID });
+
                 // and run exited function
                 if (app.prevRoute && app.prevRoute.exited) {
                     app.prevRoute.exited();
@@ -161,12 +77,13 @@ const oc = {
             // $body.classList = '';
             // $body.classList.add( app.newRouteID );
 
-
             // run entered function
             app.newRoute.entered();
 
             // target new route
             app.newRouteElem = document.getElementById(app.newRouteID);
+
+            window && window.scrollTo({ top: 0 });
 
         },
 
@@ -175,14 +92,16 @@ const oc = {
             oc.init();
 
             // just in case newURL and oldURL aren't supported
-            if(!window.HashChangeEvent)(function(){
-                var lastURL=document.URL;
-                window.addEventListener("hashchange",function(event){
-                    Object.defineProperty(event,"oldURL",{enumerable:true,configurable:true,value:lastURL});
-                    Object.defineProperty(event,"newURL",{enumerable:true,configurable:true,value:document.URL});
-                    lastURL=document.URL;
-                });
-            }());
+            if (!window.HashChangeEvent) {
+                (function(){
+                    var lastURL = document.URL;
+                    window.addEventListener("hashchange", function(event){
+                        Object.defineProperty(event, "oldURL", { enumerable: true, configurable: true, value: lastURL });
+                        Object.defineProperty(event, "newURL", { enumerable: true, configurable: true, value: document.URL });
+                        lastURL = document.URL;
+                    });
+                }());
+            }
 
             // If there is no hash in the URL, change the URL to
             // include the default view's hash.

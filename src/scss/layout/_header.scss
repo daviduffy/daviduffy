@@ -1,10 +1,10 @@
 .h {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   left: 0;
   height: var(--header-height);
-  z-index: 1;
+  z-index: 100;
 }
 
 .h__trg {
@@ -20,20 +20,6 @@
     font-family: var(--font-monospace);
   }
 }
-
-.h__menu .menu {
-  @extend .h3;
-  display: flex;
-  padding: 1rem;
-  justify-content: space-between;
-  max-width: 500px;
-}
-
-.h__menu .a {
-  color: var(--color-text-normal);
-  text-decoration: none;
-}
-
 
 // .title-bar,
 // .top-bar {

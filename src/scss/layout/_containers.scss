@@ -1,5 +1,11 @@
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 0.875rem;
+}
+
 .content {
-    margin-top: 2.6rem;
+    margin-top: var(--header-height);
 }
 
 // .body-content {
@@ -41,132 +47,6 @@
 //     }
 // }
 
-
-// // Portfolio
-// // ===============
-// .portfolio section {
-//     .content {
-//         padding-top: 2rem;
-//         padding-bottom: 2rem;
-//     }
-// }
-
-// .portfolio-card {
-//     height: 360px;
-//     position: relative;
-//     transition: .15s ease-in-out;
-//     padding: 0;
-//     z-index: 1;
-//     .sub-description {
-//         margin-top: 1rem;
-//         & a:nth-child(2){
-//             margin-left: 2rem;
-//         }
-//     }
-// }
-// @media screen and (max-width: ($breakpoint-medium - 1)){
-//     .portfolio-card {
-//         background-color: rgba(90,90,90,.9);
-//         .card.card-button span {
-//             border-color: rgba(255,255,255,0);
-//         }
-//         .card.underline span {
-//             width: 22%;
-//             height: 17%;
-//         }
-//         .card.description > * {
-//             opacity: 1;
-//         }
-//         & .card.underline > *,
-//         & .card.card-button > *,
-//         & .card.description > * {
-//             transform: translate(0, -60px);
-//         }
-//     }   
-// }
-// .card {
-//     color: $white;
-//     position: absolute; 
-//     height: 100%;
-//     width: 100%;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     &.card-button {
-//         &>span {
-//             z-index: 2;
-//             position: relative;
-//             display: flex;
-//             justify-content: center;
-//             align-items: center;
-//         }
-//         a {
-//             position: absolute;
-//             top: 0;
-//             bottom:0;
-//             right:0;
-//             left:0;
-//         }
-//     }
-// }
-// .card.image{
-//     mix-blend-mode: screen;
-//     opacity: .35;
-// }
-
-// @media screen and (min-width: $breakpoint-medium){
-//     .portfolio-card .sub-description {
-//         opacity: 0;
-//         transition: transform .35s ease-in-out;
-//     }
-//     .portfolio-card:hover {
-//         background-color: rgba(90,90,90,.9);
-//         .card.card-button span {
-//             border-color: rgba(255,255,255,0);
-//         }
-//         .card.underline span {
-//             width: 22%;
-//             height: 17%;
-//         }
-//         .card.description > *,
-//         .card .sub-description {
-//             opacity: 1;
-//         }
-//         & .card.underline > *,
-//         & .card.card-button > *,
-//         & .card.description > *{
-//             transform: translate(0, -60px);
-//         }   
-//     }
-// }
-
-
-// .card-1 {
-//     background-color: rgba(120,120,120,.75);
-//     .card.image {
-//         background: url("../img/give-r-ecommerce-1.jpg") no-repeat center/cover;
-//     }
-// }
-// .card-2 {
-//     background-color: rgba(250, 141, 40, .55);
-//     .card.image {
-//         background: url("../img/amy-galbraith-blog-1.jpg") no-repeat center/cover;
-//     }
-// }
-// .card-3 {
-//     .card {
-//         color: $black;
-//     }
-//     &:hover span{
-//         color: $white;
-//     }
-// }
-// .card-4 {
-//     background-color: rgba(190,190,190,.75);
-//     .card.image {
-//         background: url("../img/t-and-c-entertainment-1.jpg") no-repeat center/cover;
-//     }
-// }
 
 // // Portfolio Doodles
 // // =================

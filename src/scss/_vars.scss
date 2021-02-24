@@ -32,6 +32,11 @@ $global-flexbox: false;
 $print-transparent-backgrounds: true;
 
 
+
+$breakpoint-medium: unquote("640px");
+$breakpoint-large: unquote("1024px");
+
+
 // colors
 $color-primary: rgba(250, 141, 40, 1);
 
@@ -73,11 +78,13 @@ $grid-row-width: $global-width;
   // ===========================================================================
     --header-height             : 2.6rem;
     --header-height-inverted    : -2.6rem;
+    --max-width                 : 1200px;
+
+    @media screen and (min-width: $breakpoint-medium) {
+      --header-height           : 6rem;
+      --header-height-inverted  : -6rem;
+    }
 }
-
-
-$breakpoint-medium: unquote("640px");
-$breakpoint-large: unquote("1024px");
 
 
 // Utilities

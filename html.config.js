@@ -13,7 +13,7 @@ const html = htmlTemplate
   .replace('{{ Menu }}', Menu)
   .replace('{{ Offcanvas }}', Offcanvas)
   .replace('{{ Header }}', Header)
-  .replace('{{ About }}', About)
+  //.replace('{{ About }}', About)
   .replace('{{ Portfolio }}', Portfolio)
   .replace('{{ Contact }}', Contact)
   .replace('{{ Splash }}', Splash);

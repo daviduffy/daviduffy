@@ -17,7 +17,7 @@ const htmlOptions = {
 }
 
 const plugins = [
-  new CleanWebpackPlugin(),
+  // new CleanWebpackPlugin(),
   new CreateFileWebpack(htmlOptions),
   new CopyPlugin({
     patterns: [
@@ -34,24 +34,23 @@ const plugins = [
         to: path.resolve(__dirname, 'dist'),
         context: 'src/',
       })),
-
     ],
   })
 ];
 
-if (!devMode) {
-  // enable in production only
-  plugins.push(
-    new MiniCssExtractPlugin({
-      filename: '../css/[name].css',
-      chunkFilename: '../css/[id].css',
-      ignoreOrder: false, // Enable to remove warnings about conflicting order
-    }));
-}
+// if (!devMode) {
+//   // enable in production only
+//   plugins.push(
+//     new MiniCssExtractPlugin({
+//       filename: '../css/[name].css',
+//       chunkFilename: '../css/[id].css',
+//       ignoreOrder: false, // Enable to remove warnings about conflicting order
+//     }));
+// }
 
 module.exports = {
   entry: './src/js/main.js',
-  mode: 'development',
+  // mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist',
@@ -75,7 +74,7 @@ module.exports = {
         }
       },
       {
-        test: /\.(sa|sc|c)ss$/,
+        test: /\.s(a|c)ss$/,
         use: [
           devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
@@ -88,6 +87,8 @@ module.exports = {
         type: 'asset/resource',
       },
     ],
-
+    // resolve: {
+    //   extensions: ['.js', '.scss']
+    // },
   },
 };

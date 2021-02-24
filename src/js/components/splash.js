@@ -16,9 +16,11 @@ const Splash = () => `
 
       </picture>
     </div>
-    <div class="splash__heading">
-      <span>Howdy! I'm </span>
-      <h1 class="p"><span class="h1 splash__name">David Duffy</span><br />a web developer.</h1>
+    <div class="container">
+      <div class="splash__heading">
+        <span>Howdy! I'm </span>
+        <h1 class="p"><span class="h1 splash__name">David Duffy</span><br />a web developer.</h1>
+      </div>
     </div>
   </section>
 `;

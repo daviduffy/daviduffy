@@ -1,9 +1,12 @@
+const data = require('../../data/menu.json');
+
 const Menu = () => `
 <ul class="menu">
-  <li><a href="#splash" class="a a--f a--menu">Home</a></li>
-  <li><a href="#about" class="a a--f a--menu">About</a></li>
-  <li><a href="#portfolio" class="a a--f a--menu">Portfolio</a></li>
-  <li><a href="#contact" class="a a--f a--menu">Contact</a></li>
+  ${data
+      .filter(({ active }) => active)
+      .map((item) => `
+    <li><a href="#${item.href}" class="menu__item">${item.id}</a></li>
+  `).join('')}
 </ul>
 `;
 

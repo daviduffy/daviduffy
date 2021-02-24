@@ -7,7 +7,6 @@ exports.default = `<!doctype html>
     <title>David Duffy | daviduffy | Web Designer &amp; Developer</title>
     <meta name="description" content="A portfolio site created by David Duffy (@daviduffy), a web designer and developer from Seattle, Washington." />
     <meta itemprop="description" content="A portfolio site created by David Duffy (aka daviduffy), a web designer and developer from Seattle, Washington." />
-    <link rel="stylesheet" href="css/main.css">
     <link rel='shortcut icon' href='img/fav.ico' type='image/x-icon'/ >
     <meta itemprop="name" content="David Duffy"/>
     <meta itemprop="url" content="http://daviduffy.me"/>
@@ -42,38 +41,14 @@ exports.default = `<!doctype html>
       {{ Header }}
 
     <main class="content">
-      <section id="about">
-
-        {{ About }}
-
-      </section>
-      <section id="portfolio">
-
+      <div class="app">
         {{ Portfolio }}
-
-      </section>
-      <section id="contact">
-
         {{ Contact }}
-
-      </section>
-
-      {{ Splash }}  
+        {{ Splash }}  
+      </div>
 
     </main>
-    <!-- <footer>some footer</footer> -->
-    <script async src="https://www.google-analytics.com/analytics.js"></script>
     <script src="js/main.bundle.js"></script>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-82438905-1', 'auto');
-      ga('send', 'pageview');
-    </script>
-
   </body>
 </html>
-`
+`;
