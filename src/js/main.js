@@ -17,20 +17,19 @@ const oc = {
   bars: document.querySelector('.h__trg'),
   times: document.querySelector('.oc__trg'),
   bg: document.querySelector('.oc__x'),
-  links: Array.from(document.querySelectorAll('.oc .a--menu')),
+  links: Array.from(document.querySelectorAll('.oc .menu a')),
   init: function(){
     oc.menu.addEventListener("transitionend", oc.OnTransitionEnd, false);
     oc.bars.addEventListener("click", oc.toggleClassMenu, false);
     oc.bg.addEventListener("click", oc.toggleClassMenu, false);
     oc.times.addEventListener("click", oc.toggleClassMenu, false);
     oc.links.forEach(function(link) {
-      link.addEventListener("click", oc.toggleClassMenu, false);
+        link.addEventListener("click", oc.toggleClassMenu, false);
     })
   }
 };
 
 (function() {
-    var $body = document.body;
     var app = {
         // routes (i.e. views and their functionality) defined here
         routes: {
@@ -56,8 +55,27 @@ const oc = {
                 }
             },
             contact: {
+                initialized: false,
                 entered: function() {
-                     // app.newRouteElem.innerHTML = '<p>This JavaScript content overrides the static content for this view.</p>';
+                    if (!this.initialized) {
+
+                        const formScript = document.createElement('script');
+                        const js = `var Instance = Lumin.default.widgets.signUp.new();
+                            Instance.render({
+                                userID: 'j4AQDctxaOhTkf1T70k5J8LHiNp2',
+                                formID: '723dd95e-3332-4403-8c57-e6627065fd92'
+                            });`;
+                        formScript.innerHTML = js;
+                        const handleLoad = () => {
+                            document.body.appendChild(formScript);
+                        }
+
+                        const mainScript = document.createElement('script');
+                        mainScript.src = 'https://nove.io/v4/nove.js';
+                        mainScript.onload = handleLoad;
+                        document.body.appendChild(mainScript);
+                        this.initialized = true;
+                    }
                 }
             }
         },
@@ -103,8 +121,6 @@ const oc = {
 
             oc.init();
 
-            $body.classList.add('initialized');
-
             // just in case newURL and oldURL aren't supported
             if (!window.HashChangeEvent) {
                 (function(){
@@ -131,6 +147,7 @@ const oc = {
                 app.routeChange(e);
             });
 
+            document.body.classList.add('initialized');
 
         }
     };

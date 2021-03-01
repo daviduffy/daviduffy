@@ -24,11 +24,7 @@ exports.default = `<!doctype html>
     <meta property="og:image" content="http://daviduffy.me/img/splash/david-duffy-designer-developer-product-owner-2-1024.jpg" />
     <meta property="og:description" content="A portfolio site created by David Duffy (aka daviduffy), a web designer and developer from Seattle, Washington." />
     <link rel="canonical" href="http://daviduffy.me">
-    <!-- TODO: deal with loading fonts better -->
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Inconsolata:400|Open+Sans:400,700" as="font" type="font/woff2" crossorigin>
-    <style>
-      /* .app > *, .oc, .h { display: none; } */
-    </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
   </head>
 
   <body>
@@ -45,14 +41,16 @@ exports.default = `<!doctype html>
 
     <main class="content">
       <div class="app">
+
         {{ Portfolio }}
         {{ Contact }}
-        {{ Splash }}  
+        {{ Splash }}
+
       </div>
 
     </main>
     <script src="js/main.bundle.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Open+Sans:400,600,300">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
   </body>
 </html>
 `;

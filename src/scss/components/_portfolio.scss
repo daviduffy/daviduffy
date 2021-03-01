@@ -1,7 +1,8 @@
 .portfolio__content {
   margin-bottom: 3rem;
+  display: grid;
+  grid-gap: 1.125rem;
   @media screen and (min-width: $breakpoint-medium) {
-    display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
   }

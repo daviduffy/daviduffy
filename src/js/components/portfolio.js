@@ -5,28 +5,37 @@ const Portfolio = () => `
 <section id="portfolio" class="portfolio">
   <div class="container">
     <h2 class="h2 h#--f">Projects</h2>
-    <div class="portfolio__content">
+    <div class="portfolio__content portfolio__content--work">
       ${projects.map((entry, index) => (
-          `<div class="p-card p-card--${index + 1}">
-              <div class="p-card__image" data-bg="${entry.img}"></div>
-              <div class="p-card__underline"><span>&nbsp;</span></div>
-              <div class="p-card__title">
-                <span>${entry.name}</span>
-              </div>
-              <div class="p-card__box"><span>&nbsp;</span></div>
-              <a class="p-card__description" target="_blank" href="${entry.url}" rel="noopener">
-                <span class="span">
-                  ${entry.content}
-                  <hr />
-                  ${entry.tech}
-                </span>
-              </a>
-          </div>`
+        `<div class="p-card p-card--${index + 1}">
+            <div class="p-card__image" data-bg="${entry.img}"></div>
+            <div class="p-card__underline"><span>&nbsp;</span></div>
+            <div class="p-card__title">
+              <span>${entry.name}</span>
+            </div>
+            <div class="p-card__box"><span>&nbsp;</span></div>
+            <a class="p-card__description" target="_blank" href="${entry.url}" rel="noopener">
+              <span class="span">
+                ${entry.content}
+                <hr />
+                ${entry.tech}
+              </span>
+            </a>
+        </div>`
         )).join('')}
     </div>
     <h2 class="h2 h#--f">Doodles</h2>
-    <div class="portfolio__content">
-      doodle items: ${play.length}
+    <div class="portfolio__content portfolio__content--doodles">
+      ${play.map((entry, index) => (
+        `<div class="d-card">
+          <div class="d-card__img" data-bg="${entry.img}">
+            <div class="d-card__title">${entry.name}</div>
+          </div>
+          <a class="d-card__description" target="_blank" href="${entry.url}" rel="noopener">
+            ${entry.content}
+          </a>
+        </div>`
+      )).join('')}
     </div>
   </div>
 </section>`;
