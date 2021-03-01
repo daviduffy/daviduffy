@@ -42,12 +42,12 @@ const plugins = [
 
 // if (!devMode) {
   // enable in production only
-  plugins.push(
-    new MiniCssExtractPlugin({
-      filename: '../css/[name].css',
+  // plugins.push(
+    // new MiniCssExtractPlugin({
+      // filename: '../css/[name].css',
       // chunkFilename: '../css/[id].css',
       // ignoreOrder: false, // Enable to remove warnings about conflicting order
-    }));
+    // }));
 // }
 
 module.exports = {
@@ -78,7 +78,7 @@ module.exports = {
       {
         test: /\.s(a|c)ss$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
           'sass-loader',
