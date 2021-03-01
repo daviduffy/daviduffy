@@ -1,3 +1,10 @@
+// this style is inline in the head
+// .oc { display: none; }
+
+.initialized .oc {
+  display: block;
+}
+
 .oc {
   position: fixed;
   left: 0;

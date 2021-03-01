@@ -1,4 +1,5 @@
 import styles from '../scss/app.scss';
+// import styles from '../scss/app.inline.scss';
 
 const oc = {
   toggleClassMenu: function() {
@@ -29,7 +30,7 @@ const oc = {
 };
 
 (function() {
-    var $body = document.getElementsByTagName('body')[0];
+    var $body = document.body;
     var app = {
         // routes (i.e. views and their functionality) defined here
         routes: {
@@ -39,7 +40,18 @@ const oc = {
                 }
              },
             portfolio: {
+                initialized: false,
                 entered: function() {
+                    // context of 'this' is 'portfolio'
+                    if (!this.initialized) {
+                        const images = Array.from(document.querySelectorAll(['[data-bg]']));
+                        images.forEach((el) => {
+                                const { bg } = el.dataset;
+                                el.style.backgroundImage = `url('${bg}')`;
+                            });
+
+                        this.initialized = true;
+                    }
                     // app.newRouteElem.innerHTML = '<p>This JavaScript content overrides the static content for this view.</p>';
                 }
             },
@@ -90,6 +102,8 @@ const oc = {
         init: function() {
 
             oc.init();
+
+            $body.classList.add('initialized');
 
             // just in case newURL and oldURL aren't supported
             if (!window.HashChangeEvent) {

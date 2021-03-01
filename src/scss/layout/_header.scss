@@ -1,3 +1,10 @@
+// this style is inline in the head
+// .h { display: none; }
+
+.initialized .h {
+  display: block;
+}
+
 .h {
   position: absolute;
   top: 0;

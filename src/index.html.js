@@ -25,7 +25,10 @@ exports.default = `<!doctype html>
     <meta property="og:description" content="A portfolio site created by David Duffy (aka daviduffy), a web designer and developer from Seattle, Washington." />
     <link rel="canonical" href="http://daviduffy.me">
     <!-- TODO: deal with loading fonts better -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Open+Sans:400,600,300">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Inconsolata:400|Open+Sans:400,700" as="font" type="font/woff2" crossorigin>
+    <style>
+      /* .app > *, .oc, .h { display: none; } */
+    </style>
   </head>
 
   <body>
@@ -49,6 +52,7 @@ exports.default = `<!doctype html>
 
     </main>
     <script src="js/main.bundle.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Open+Sans:400,600,300">
   </body>
 </html>
 `;

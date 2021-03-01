@@ -7,6 +7,8 @@ const html = require('./html.config.js').default;
 
 const devMode = process.env.NODE_ENV !== 'production';
 
+console.log('='.repeat(100), { devMode }, '='.repeat(100));
+
 const htmlOptions = {
   // path to folder in which the file will be created
   path: './dist',
@@ -39,13 +41,13 @@ const plugins = [
 ];
 
 // if (!devMode) {
-//   // enable in production only
-//   plugins.push(
-//     new MiniCssExtractPlugin({
-//       filename: '../css/[name].css',
-//       chunkFilename: '../css/[id].css',
-//       ignoreOrder: false, // Enable to remove warnings about conflicting order
-//     }));
+  // enable in production only
+  plugins.push(
+    new MiniCssExtractPlugin({
+      filename: '../css/[name].css',
+      // chunkFilename: '../css/[id].css',
+      // ignoreOrder: false, // Enable to remove warnings about conflicting order
+    }));
 // }
 
 module.exports = {
@@ -76,7 +78,7 @@ module.exports = {
       {
         test: /\.s(a|c)ss$/,
         use: [
-          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
           'sass-loader',

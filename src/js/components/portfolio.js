@@ -8,13 +8,13 @@ const Portfolio = () => `
     <div class="portfolio__content">
       ${projects.map((entry, index) => (
           `<div class="p-card p-card--${index + 1}">
-              <div class="p-card__image" style="background-image: url('${entry.img}')"></div>
+              <div class="p-card__image" data-bg="${entry.img}"></div>
               <div class="p-card__underline"><span>&nbsp;</span></div>
               <div class="p-card__title">
                 <span>${entry.name}</span>
               </div>
               <div class="p-card__box"><span>&nbsp;</span></div>
-              <a class="p-card__description" target="_blank" href="${entry.url}">
+              <a class="p-card__description" target="_blank" href="${entry.url}" rel="noopener">
                 <span class="span">
                   ${entry.content}
                   <hr />
