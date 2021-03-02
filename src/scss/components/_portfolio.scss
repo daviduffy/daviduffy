@@ -2,9 +2,18 @@
   margin-bottom: 3rem;
   display: grid;
   grid-gap: 1.125rem;
+}
+
+.portfolio__content--work {
   @media screen and (min-width: $breakpoint-medium) {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+.portfolio__content--doodles {
+  @media screen and (min-width: $breakpoint-medium) {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -127,6 +136,37 @@
 
     .p-card__box span {
       opacity: 0;
+    }
+  }
+}
+
+.d-card {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.d-card__img {
+  flex: 3;
+  background: var(--white) center / cover no-repeat;
+  position: relative;
+  min-height: 180px;
+}
+
+.d-card__description {
+  flex: 2;
+  color: var(--black);
+  padding: 2rem 1rem 1rem;
+  font-family: $font-family-monospace;
+}
+
+.d-card__title {
+  position: absolute;
+  top: 83%;
+  @media screen and (min-width: $breakpoint-medium) {
+    &::before {
+      width: 6px;
     }
   }
 }

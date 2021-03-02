@@ -24,17 +24,17 @@ const Portfolio = () => `
         </div>`
         )).join('')}
     </div>
-    <h2 class="h2 h#--f">Doodles</h2>
+    <h2 class="h2 h#--f">Code Doodles</h2>
     <div class="portfolio__content portfolio__content--doodles">
       ${play.map((entry, index) => (
-        `<div class="d-card">
-          <div class="d-card__img" data-bg="${entry.img}">
-            <div class="d-card__title">${entry.name}</div>
+        `<a class="d-card" target="_blank" href="${entry.url}" rel="noopener">
+          <div class="d-card__img" data-bg="${entry.image}">
+            <div class="d-card__title h#--f h5">${entry.name}</div>
           </div>
-          <a class="d-card__description" target="_blank" href="${entry.url}" rel="noopener">
+          <div class="d-card__description">
             ${entry.content}
-          </a>
-        </div>`
+          </div>
+        </a>`
       )).join('')}
     </div>
   </div>

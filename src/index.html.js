@@ -24,6 +24,7 @@ exports.default = `<!doctype html>
     <meta property="og:image" content="http://daviduffy.me/img/splash/david-duffy-designer-developer-product-owner-2-1024.jpg" />
     <meta property="og:description" content="A portfolio site created by David Duffy (aka daviduffy), a web designer and developer from Seattle, Washington." />
     <link rel="canonical" href="http://daviduffy.me">
+    <style>.oc, .h, .content { display: none; }</style>
     <link rel="preconnect" href="https://fonts.gstatic.com">
   </head>
 

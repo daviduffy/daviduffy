@@ -1,6 +1,9 @@
 // Single page app navigation
 // ==========================
 
+// fix CLS
+.oc, .h, .content { display: block; }
+
 .app > * {
     display: none;
     
