@@ -24,11 +24,21 @@ exports.default = `<!doctype html>
     <meta property="og:image" content="http://daviduffy.me/img/splash/david-duffy-designer-developer-product-owner-2-1024.jpg" />
     <meta property="og:description" content="A portfolio site created by David Duffy (aka daviduffy), a web designer and developer from Seattle, Washington." />
     <link rel="canonical" href="http://daviduffy.me">
-    <style>.oc, .h, .content { display: none; }</style>
+    <style>
+      .oc, .h, .content { display: none; }
+      .initialized--portfolio, .initialized--contact { display: none; }
+      .initialized { display: block; }
+    </style>
     <link rel="preconnect" href="https://fonts.gstatic.com">
   </head>
 
   <body>
+    <script>
+      if (window && window.location && window.location.hash) {
+        var hash = window.location.hash.slice(1);
+        document.body.classList.add('initialized--' + hash);
+      }
+    </script>
     <div class="oc">
       <div class="oc__menu">
 
