@@ -29,6 +29,7 @@ exports.default = `<!doctype html>
       .initialized--portfolio, .initialized--contact { display: none; }
       .initialized { display: block; }
     </style>
+    <link rel="stylesheet" href="css/main.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
   </head>
 

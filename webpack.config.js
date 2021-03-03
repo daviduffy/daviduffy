@@ -37,21 +37,24 @@ const plugins = [
         context: 'src/',
       })),
     ],
-  })
+  }),
+  new MiniCssExtractPlugin({
+    filename: '../css/[name].css',
+  }),
 ];
 
 // if (!devMode) {
   // enable in production only
   // plugins.push(
-    // new MiniCssExtractPlugin({
-      // filename: '../css/[name].css',
       // chunkFilename: '../css/[id].css',
       // ignoreOrder: false, // Enable to remove warnings about conflicting order
-    // }));
 // }
 
 module.exports = {
-  entry: './src/js/main.js',
+  entry: {
+    main: './src/js/main.js',
+    critical: './src/scss/critical.scss',
+  },
   // mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
@@ -78,7 +81,7 @@ module.exports = {
       {
         test: /\.s(a|c)ss$/,
         use: [
-          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
           'sass-loader',
