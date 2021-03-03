@@ -2,7 +2,7 @@ const path = require('path');
 const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const html = require('./html.config.js');
+const html = require('./src/html.config.js');
 
 // const devMode = process.env.NODE_ENV !== 'production';
 
@@ -25,7 +25,7 @@ const plugins = [
     ],
   }),
   new MiniCssExtractPlugin({
-    filename: 'css/[name].css',
+    filename: 'css/[name]-[hash].bundle.css',
   }),
   new HtmlWebpackPlugin({
     Offcanvas: html.Offcanvas,
@@ -33,7 +33,9 @@ const plugins = [
     Portfolio: html.Portfolio,
     Contact: html.Contact,
     Splash: html.Splash,
-    template: './index.html', // uses templating based on lodash https://lodash.com/docs/#template
+    // uses templating based on lodash https://lodash.com/docs/#template
+    template: './src/index.html',
+    // manual control of how bundles are injected. see index.html for more
     inject: false,
   }),
 ];
@@ -49,7 +51,7 @@ module.exports = {
   },
   plugins,
   output: {
-    filename: 'js/[name].bundle.js',
+    filename: 'js/[name]-[hash].bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
   module: {
