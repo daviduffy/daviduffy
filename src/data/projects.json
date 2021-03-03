@@ -4,7 +4,7 @@
     "name": "Nove.io",
     "content": "A contact form builder and inquiry analytics toolkit for creatives",
     "url": "https://nove.io",
-    "img": "/img/nove-anayltics-for-photographers.png",
+    "img": "./img/nove-anayltics-for-photographers.png",
     "tech": "F.E.R.N. Single-Page App<br>UMD Form Embed"
   },
   {
@@ -12,7 +12,7 @@
     "name": "Helena Falangus",
     "content": "A quirky portfolio site for a hollywood costume designer",
     "url": "http://www.helenafalangus.com",
-    "img": "/img/helena-falangus.png",
+    "img": "./img/helena-falangus.png",
     "tech": "WordPress"
   },
   {
@@ -20,7 +20,7 @@
     "name": "Give'r",
     "content": "Give'r, an adventure apparel brand that focuses on a small group of inspiring products.",
     "url": "https://www.give-r.com",
-    "img": "/img/give-r-ecommerce-1.jpg",
+    "img": "./img/give-r-ecommerce-1.jpg",
     "tech": "Shopify"
   }
 ]

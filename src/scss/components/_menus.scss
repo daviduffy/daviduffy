@@ -3,11 +3,3 @@
   text-decoration: none;
   text-transform: capitalize;
 }
-
-.h__menu .menu {
-  @extend .h5;
-  display: flex;
-  padding: 1rem;
-  justify-content: space-between;
-  max-width: 500px;
-}

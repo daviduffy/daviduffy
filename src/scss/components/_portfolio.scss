@@ -40,7 +40,9 @@
 .p-card__underline span,
 .p-card__box span,
 .p-card__title span {
-  @include flex-centered;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 50%;
   height: 17%;
 }

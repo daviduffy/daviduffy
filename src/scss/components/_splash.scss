@@ -10,7 +10,6 @@
   position: relative;
   padding: 4rem 0 0 2.75rem;
   padding-top: clamp(4rem, calc(2rem + 14vw), 300px);
-  @extend .h5;
   @media screen and (min-width: $breakpoint-medium) {
     padding-left: 1rem;
   }

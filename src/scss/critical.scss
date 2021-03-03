@@ -1,3 +1,9 @@
-body {
-  content: 'foo';
-}
+@charset 'utf-8';
+@import 'vars';
+@import 'base/index';
+@import 'layout/index';
+@import 'components/index';
+@import 'special/index';
+
+// this style is inline in the head
+.oc { display: none; }

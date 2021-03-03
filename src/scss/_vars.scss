@@ -49,10 +49,6 @@ $grid-row-width: $global-width;
 
   // Base
   --white                      : #fefefe;
-  --almost-white               : #e2e2e2;
-  --light-gray                 : #cccccc;
-  --medium-gray                : #999999;
-  --dark-gray                  : #666666;
   --black                      : #0a0a0a;
 
   // Theme
@@ -68,11 +64,8 @@ $grid-row-width: $global-width;
   // Easing
   // ===========================================================================
     --drop-in-easing-bezier      : .73, .14, 1, .99;
-    --short-easing-duration      : 0.18s;
     --standard-easing-duration   : 0.33s;
-    --long-easing-duration       : 0.66s;
     --standard-easing-bezier     : 0.56, 0.26, 0.37, 0.98;
-    --drop-in-animation-delay    : 0.77s;
 
   // Sizing
   // ===========================================================================
@@ -90,23 +83,6 @@ $grid-row-width: $global-width;
 // Utilities
 // ------------
 
-.row.normal {
-    max-width: $grid-row-width !important;
-}
-
-.eat-left {
-    padding-left: 0 !important;
-}
-
-.eat-right {
-    padding-right: 0 !important;
-}
-
-.eat-both {
-    @extend .eat-left;
-    @extend .eat-right;
-}
-
 @mixin abs-centered {
     position: absolute;
     top: 0;
@@ -115,51 +91,7 @@ $grid-row-width: $global-width;
     right: 0;
 }
 
-@mixin display-flex {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-}
-
-@mixin justify-content ( $arg ) {
-    -webkit-justify-content: $arg ;
-    justify-content: $arg ;
-}
-
-@mixin justify-content-center {
-    @include justify-content(center);
-}
-
-@mixin align-items($arg) {
-    -webkit-align-items: $arg;
-    align-items: $arg;
-}
-
-@mixin flex-centered {
-    @include display-flex;
-    @include justify-content(center);
-    @include align-items(center);
-}
-
 @mixin link-style {
     color: transparentize($black, 0.25);
     box-shadow: 0px 2px 0px 0px transparentize($color-action ,0.5);
-}
-
-@mixin flex-direction($arg) {
-    -webkit-flex-direction: $arg;
-    flex-direction: $arg;
-}
-
-@mixin flex-wrap($arg) {
-    -webkit-flex-wrap: $arg;
-    flex-wrap: $arg;
-}
-
-@mixin column-count($arg){
-    -webkit-column-count: $arg; /* Chrome, Safari, Opera */
-    -moz-column-count: $arg; /* Firefox */
-    column-count: $arg;
 }

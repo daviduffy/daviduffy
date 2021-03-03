@@ -1,0 +1,15 @@
+// ===============================
+// Async (lazy-loaded) Component Imports
+// ===============================
+
+@import 'menus';
+@import 'buttons';
+@import 'typography'; // this partial is in both async and index
+@import 'menus';
+@import 'effects';
+@import 'svg';
+@import 'off-canvas';
+// @import 'splash';
+@import 'contact';
+@import 'portfolio';
+@import 'gig';
