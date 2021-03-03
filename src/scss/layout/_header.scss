@@ -1,0 +1,30 @@
+.h {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: var(--header-height);
+  z-index: 100;
+}
+
+.h__trg {
+  @media screen and (min-width: $breakpoint-medium) {
+    display: none;
+  }
+}
+
+.h__menu {
+  display: none;
+  @media screen and (min-width: $breakpoint-medium) {
+    display: block;
+    font-family: var(--font-monospace);
+  }
+}
+
+.h__menu .menu {
+  @extend .h5;
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  max-width: 500px;
+}

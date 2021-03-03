@@ -1,0 +1,22 @@
+[
+  {
+    "id": "home",
+    "href": "splash",
+    "active": true
+  },
+  {
+    "id": "about",
+    "href": "about",
+    "active": false
+  },
+  {
+    "id": "portfolio",
+    "href": "portfolio",
+    "active": true
+  },
+  {
+    "id": "contact",
+    "href": "contact",
+    "active": true
+  }
+]

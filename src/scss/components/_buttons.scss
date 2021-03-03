@@ -1,0 +1,29 @@
+.fancy-link {
+    color: $dark-gray;
+    box-shadow: 0px 1px 0px 0px transparentize($color-primary,.4);
+    transition: .3s;
+    &:hover,
+    &:focus {
+        color: inherit;
+        box-shadow: 0px 2px 0px 0px transparentize($color-primary,.2);
+    }
+}
+
+.control-button {
+    color: $dark-gray;
+    border: 1px solid $medium-gray;
+    border-radius: 2px;
+    padding: .4rem .6rem;
+    width: 80%;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    transition: .3s ease-out;
+    &:hover {
+        background-color: transparentize($medium-gray, .8);
+        border-color: $dark-gray;
+        color: transparentize($black, .2);
+    }
+    &:focus {
+        color: $dark-gray;
+    }
+}

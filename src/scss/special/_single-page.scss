@@ -1,0 +1,27 @@
+// Single page app navigation
+// ==========================
+
+// fix CLS
+.oc, .h, .content { display: block; }
+
+.app > * {
+    display: none;
+    
+    // shows any element that is targeted
+    &:target {
+        display: block;
+        // eliminated transition animation b/c it plays onload
+        // and that's ugly. should figure that out
+        // animation: fade 0.5s ease 1;
+    }
+
+    // shows the default view when the user hits www.site.com
+    &:last-child {
+        display: block;
+    }
+    
+    // this monstrosity hides the default view when a target exists
+    &:target ~ * {
+        display: none;
+    }
+}

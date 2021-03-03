@@ -1,2 +1,0 @@
-# daviduffy
-My portfolio site

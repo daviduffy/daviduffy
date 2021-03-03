@@ -1,0 +1,66 @@
+.splash {
+  padding-top: 0;
+  margin-top: var(--header-height-inverted);
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.splash__heading {
+  position: relative;
+  padding: 4rem 0 0 2.75rem;
+  padding-top: clamp(4rem, calc(2rem + 14vw), 300px);
+  @media screen and (min-width: $breakpoint-medium) {
+    padding-left: 1rem;
+  }
+}
+
+.splash__name {
+  font-family: var(--font-sans);
+  background-color: var(--warm-orange);
+  padding: 0.125rem 0.5rem 0.125rem 0;
+  display: inline-block;
+  color: var(--color-text-inverted);
+  font-weight: 500;
+  letter-spacing: -.9px;
+  text-transform: uppercase;
+  margin: 0.75rem 0 0.75rem -0.125rem;
+  position: relative;
+  &::before {
+    content: '';
+    display: block;
+    background-color: var(--warm-orange);
+    position: absolute;
+    width: 200%;
+    top: 0;
+    right: 100%;
+    bottom: 0;
+  }
+}
+
+.splash__image-c {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  height: 100vh;
+  width: 100vw;
+}
+
+.splash__image > * {
+  display: block;
+  max-width: none;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  @media (orientation: portrait) {
+    width: 88vh;
+  }
+}
+

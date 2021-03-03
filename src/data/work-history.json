@@ -1,0 +1,70 @@
+[
+  {
+    "id": "REI",
+    "name": "REI",
+    "year": "2019 - Present",
+    "headline": "Adventure travel web dev",
+    "copy": [
+      ""
+    ]
+  },
+  {
+    "id": "CC",
+    "name": "CrystalCommerce",
+    "year": "2014-2019",
+    "headline": "Customer service rep turned frontend dev",
+    "copy": [
+      "Started as a customer service rep. Worked hard, moved into web design and UX, into product management, and finally settled in Frontend Development. My journey has taken me through myriad product develpment disciplines, and helped me build the experience to be a powerful contributor.",
+      "Customer Service: refined that ever-important ability to explain technical subject matter to non-technical persons",
+      "Design/Development: went from 4th-grade reading level to fluent in HTML/SCSS and can do work with JS as well",
+      "Product Management: learned to build consensus, to adapt to uncertainty, and a lot about agile process",
+      "Frontend Development: learned to work with old and new technologies and apply all my previous experience to build creative, awesome products"
+    ]
+  },
+  {
+    "id": "JH",
+    "name": "GoSkateShop, Super-Fit, JHSurgery",
+    "year": "2009-2013",
+    "headline": "Do-everything single employee of avid entrepreneur",
+    "copy": [
+      "Worked for a guy that had a thing for starting e-Commerce stores. I ran everything for all of them, from answering customer service phone calls to helping with two site re-designs.",
+      "GoSkateShop: hands-on work with Flash, Adobe Creative Suite, e-Commerce management, and lots of customer service",
+      "Super-Fit: first work with HTML and CSS, and minor development work WordPress."
+    ]
+  },
+  {
+    "id": "UW",
+    "name": "University of Washington",
+    "year": "2005-2009",
+    "headline": "European studies and French",
+    "copy": [
+      "I was a European Studies major at UW, so my web dev EXP in college consisted of adding the HTML for a Top 16 to my MySpace account. The concepts were valuable, and so was my minor: French.",
+      "European Studies: learned about organizational super-structures, inheriting properties (laws)",
+      "French: language-learning techniques ended up being pretty useful later on"
+    ]
+  },
+  {
+    "id": "LW",
+    "name": "Lake Washington High School",
+    "year": "2002-2004",
+    "headline": "Intro to life and web design",
+    "copy": [
+      "In High School I kind of kicked off my interest in web development with an Adobe Flash class, which was actually a cool technology at the time. I did some e-Commerce marketing stuff in the DECA program as well.",
+      "Flash: basic web design concepts, animation keyframing, that sort of thing",
+      "e-Com Marketing: learned how to fill out a job application without making a grammatical error"
+    ]
+  },
+  {
+    "id": "ME",
+    "name": "Outside Work",
+    "year": null,
+    "headline": "",
+    "copy": [
+      "I am always on the lookout for something new and difficult to focus on. The things I am proudest of all follow that mold.",
+      "Snowboarding: In 2009 I moved to Jackson, WY just to snowboard. Inadvertently, the jobs that I had there laid the groundwork for pursuing web develoment.",
+      "Halo Suit: I think armor costumes are cool. Like a true DIY enthusiast, I watched about 2 minutes of a YouTube video and figured <br class='show-for-medium'>I could make one too. <a target='_blank' href='http://imgur.com/a/D7oUQ#0' title='photo gallery [imgur] of my self-made Halo 3 MJOLNIR Mark VI suit'>It went better than expected.</a>",
+      "Web Develoment: The world of webdev is basically endless, and it can be self-taught. It may seem strange because web development is just work for so many people, but for me it's a fun world to explore.",
+      "If you read all of that, it's probably time to <a href='#portfolio'>look at my portfolio.</a>"
+    ]
+  }
+]
