@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const html = require('./src/html.config.js');
 
-// const devMode = process.env.NODE_ENV !== 'production';
+const devMode = process.env.NODE_ENV !== 'production';
 
 const plugins = [
   new CopyPlugin({
@@ -45,7 +45,7 @@ module.exports = {
     main: './src/js/main.js',
     critical: './src/scss/critical.scss',
   },
-  devtool: 'inline-source-map',
+  devtool: devMode ? 'inline-source-map' : 'source-map',
   devServer: {
     contentBase: './dist',
   },
