@@ -33,7 +33,8 @@ const plugins = [
     Portfolio: html.Portfolio,
     Contact: html.Contact,
     Splash: html.Splash,
-    template: './index.html' // uses templating based on lodash https://lodash.com/docs/#template
+    template: './index.html', // uses templating based on lodash https://lodash.com/docs/#template
+    inject: false,
   }),
 ];
 
