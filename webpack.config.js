@@ -16,7 +16,8 @@ const plugins = [
       },
       ...[
         'robots.txt',
-        'sitemap.xml'
+        'sitemap.xml',
+        'CNAME'
       ].map((filename) => ({
         from: filename,
         to: path.resolve(__dirname, 'dist'),
