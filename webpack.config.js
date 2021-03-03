@@ -1,26 +1,12 @@
 const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CreateFileWebpack = require('create-file-webpack');
-const html = require('./html.config.js').default;
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const html = require('./html.config.js');
 
-const devMode = process.env.NODE_ENV !== 'production';
-
-console.log('='.repeat(100), { devMode }, '='.repeat(100));
-
-const htmlOptions = {
-  // path to folder in which the file will be created
-  path: './dist',
-  // file name
-  fileName: 'index.html',
-  // content of the file
-  content: html,
-}
+// const devMode = process.env.NODE_ENV !== 'production';
 
 const plugins = [
-  // new CleanWebpackPlugin(),
-  new CreateFileWebpack(htmlOptions),
   new CopyPlugin({
     patterns: [
       {
@@ -39,31 +25,31 @@ const plugins = [
     ],
   }),
   new MiniCssExtractPlugin({
-    filename: '../css/[name].css',
+    filename: 'css/[name].css',
+  }),
+  new HtmlWebpackPlugin({
+    Offcanvas: html.Offcanvas,
+    Header: html.Header,
+    Portfolio: html.Portfolio,
+    Contact: html.Contact,
+    Splash: html.Splash,
+    template: './index.html' // uses templating based on lodash https://lodash.com/docs/#template
   }),
 ];
-
-// if (!devMode) {
-  // enable in production only
-  // plugins.push(
-      // chunkFilename: '../css/[id].css',
-      // ignoreOrder: false, // Enable to remove warnings about conflicting order
-// }
 
 module.exports = {
   entry: {
     main: './src/js/main.js',
     critical: './src/scss/critical.scss',
   },
-  // mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist',
   },
   plugins,
   output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist', 'js'),
+    filename: 'js/[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
   },
   module: {
     rules: [
@@ -92,8 +78,5 @@ module.exports = {
         type: 'asset/resource',
       },
     ],
-    // resolve: {
-    //   extensions: ['.js', '.scss']
-    // },
   },
 };
